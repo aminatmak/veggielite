@@ -11,7 +11,7 @@ class Product < ApplicationRecord
   validates :address, presence: true
 
   CATEGORIES = ["Gluten free", "Dairy free", "Sugar free",
-                "Vegan", "Vegetarian", "Pescatarian", "Organic"]
+                "Vegan", "Vegetarian", "Pescetarian", "Organic"]
   validates :category, inclusion: { in: CATEGORIES }
 
   MACROS = ["Fat", "Protein", "Carb"]
