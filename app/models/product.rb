@@ -12,7 +12,7 @@ class Product < ApplicationRecord
 
   CATEGORIES = ["Gluten free", "Dairy free", "Sugar free",
                 "Vegan", "Vegetarian", "Pescetarian", "Organic"]
-  validates :category, inclusion: { in: CATEGORIES }
+  validates :categories, inclusion: { in: CATEGORIES }
 
   MACROS = ["Fat", "Protein", "Carb"]
   validates :macros, inclusion: { in: MACROS }
