@@ -1,0 +1,31 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1517260739337-6799d239ce83?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2370&q=80);">
+  <h1>VEGGIELITE</h1>
+  <p>Convenient and seamless grocery shopping experience!</p>
+</div>
+
+<div class="container position absolute">
+  <div class="row">
+    <div class="col">
+      <h1>Veggielite products</h1>
+      <div class="cards">
+        <% @products.each do |product| %>
+          <%= link_to product do %>
+            <div class="card-category position relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1493770348161-369560ae357d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2370&q=80); mx-3">
+              <%= product.name %>
+              <%= product.description %>
+              <%= product.price %>
+              <%= product.supplier_country %>
+              <%= product.calories %>
+              <%= product.macros %>
+              <%= product.shop_name %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+          <%= link_to 'Add to cart', products_path, class: "btn btn-warning mb-3" %>
+    </div>
+  </div>
+
+
+
+</div>
