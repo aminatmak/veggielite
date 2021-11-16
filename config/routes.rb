@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show, :new] do
     resources :orders, only: [:create]
   end
-
+  resources :shops, only: [:index, :show]
   resources :orders, only: [:destroy]
   get '/my_orders', to: 'my_orders#my_orders'
 end

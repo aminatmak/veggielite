@@ -7,6 +7,11 @@ class ProductsController < ApplicationController
     if params[:category].present?
       @products = @products.where('?=ANY(categories)', params[:category])
     end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'products/list', locals: { products: @products }, formats: [:html] }
+    end
   end
 
   def show

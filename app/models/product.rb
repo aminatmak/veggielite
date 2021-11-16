@@ -12,6 +12,7 @@ class Product < ApplicationRecord
   validates :calories, presence: true
   validates :shop, presence: true
 
-# CATEGORIES = ["Gluten free", "Dairy free", "Sugar free",
-#               "Vegan", "Vegetarian", "Pescetarian", "Organic"]
-# validates :categories, inclusion: { in: CATEGORIES }
+  # CATEGORIES = ["Gluten free", "Dairy free", "Sugar free",
+  #               "Vegan", "Vegetarian", "Pescetarian", "Organic"]
+  # validates :categories, inclusion: { in: CATEGORIES }
+end

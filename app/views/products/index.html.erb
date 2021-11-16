@@ -6,6 +6,15 @@
 <div class="container position absolute">
   <div class="row">
     <div class="col">
+      <div data-controller="search-movies">
+        <%= form_with url: products_path, method: :get, html: { class:
+          'mb-4', data: { search_products_target: 'form' } } do |f| %>
+          <%= f.text_field :query,
+                          class: "form-control",
+                          placeholder: 'Search',
+                          value: params[:query],
+                          data: { search_movies_target: 'input' } %>
+
       <div class="navigation menu_items position-relative">
         <ul class="list-inline">
           <li class="gluten-free list-inline-item">
