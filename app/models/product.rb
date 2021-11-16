@@ -8,14 +8,6 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :quantity, presence: true
   validates :supplier_country, presence: true
-  validates :address, presence: true
-
-  CATEGORIES = ["Gluten free", "Dairy free", "Sugar free",
-                "Vegan", "Vegetarian", "Pescetarian", "Organic"]
-  validates :categories, inclusion: { in: CATEGORIES }
-
-  MACROS = ["Fat", "Protein", "Carb"]
-  validates :macros, inclusion: { in: MACROS }
 
   validates :calories, presence: true
   validates :shop_name, presence: true

@@ -128,7 +128,8 @@ product1 = Product.create(
   quantity: 1,
   supplier_country: 'USA',
   calories: 230,
-  shop_name: 'Carrefour'
+  shop_name: 'Carrefour',
+  shop: shop1
   # macros:
 )
 # file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
@@ -145,8 +146,8 @@ product2 = Product.create(
   quantity: 1,
   supplier_country: 'Italy',
   calories: 47,
-  shop_name: 'iHerb'
-  # macros:
+  shop_name: 'iHerb',
+  shop: shop2
 )
 # file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
 # product2.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
@@ -162,8 +163,8 @@ product3 = Product.create(
   quantity: 1,
   supplier_country: 'Italy',
   calories: 47,
-  shop_name: 'iHerb'
-  # macros:
+  shop_name: 'iHerb',
+  shop: shop3
 )
 # file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
 # product3.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
@@ -179,7 +180,8 @@ product4 = Product.create(
   quantity: 1,
   supplier_country: 'Italy',
   calories: 47,
-  shop_name: 'Carrefour'
+  shop_name: 'Carrefour',
+  shop: shop4
   # macros:
 )
 # file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
@@ -196,8 +198,9 @@ product5 = Product.create(
   quantity: 1,
   supplier_country: 'Italy',
   calories: 47,
-  shop_name: 'iHerb'
-  # macros:
+  shop_name: 'iHerb',
+  shop: shop5,
+  macros: { protein: 20, carbs: 30, fat: 50 }
 )
 # file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
 # product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
@@ -205,138 +208,138 @@ product5 = Product.create(
 # product5.save
 p product5
 
-product6 = Product.create(
-  name: 'The Bridge Natural Bio Rice Drink',
-  description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
-  price: 13,
-  categories: 'Dairy free',
-  quantity: 1,
-  supplier_country: 'Italy',
-  calories: 47,
-  shop_name: 'iHerb'
-  # macros:
-)
-# file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
-# product6.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product6.product = product
-# product6.save
-p product6
+# product6 = Product.create(
+#   name: 'The Bridge Natural Bio Rice Drink',
+#   description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
+#   price: 13,
+#   categories: 'Dairy free',
+#   quantity: 1,
+#   supplier_country: 'Italy',
+#   calories: 47,
+#   shop_name: 'iHerb'
+#   # macros:
+# )
+# # file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
+# # product6.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
+# # product6.product = product
+# # product6.save
+# p product6
 
-product7 = Product.create(
-  name: 'The Bridge Natural Bio Rice Drink',
-  description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
-  price: 13,
-  categories: 'Dairy free',
-  quantity: 1,
-  supplier_country: 'Italy',
-  calories: 47,
-  shop_name: 'Carrefour'
-  # macros:
-)
-# file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
-# product7.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product7.product = product
-# product7.save
-p product7
+# product7 = Product.create(
+#   name: 'The Bridge Natural Bio Rice Drink',
+#   description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
+#   price: 13,
+#   categories: 'Dairy free',
+#   quantity: 1,
+#   supplier_country: 'Italy',
+#   calories: 47,
+#   shop_name: 'Carrefour'
+#   # macros:
+# )
+# # file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
+# # product7.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
+# # product7.product = product
+# # product7.save
+# p product7
 
-product8 = Product.create(
-  name: 'The Bridge Natural Bio Rice Drink',
-  description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
-  price: 13,
-  categories: 'Dairy free',
-  quantity: 1,
-  supplier_country: 'Italy',
-  calories: 47,
-  shop_name: 'Carrefour'
-  # macros:
-)
-# file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
-# product8.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product8.product = product
-# product8.save
-p product8
+# product8 = Product.create(
+#   name: 'The Bridge Natural Bio Rice Drink',
+#   description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
+#   price: 13,
+#   categories: 'Dairy free',
+#   quantity: 1,
+#   supplier_country: 'Italy',
+#   calories: 47,
+#   shop_name: 'Carrefour'
+#   # macros:
+# )
+# # file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
+# # product8.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
+# # product8.product = product
+# # product8.save
+# p product8
 
-product9 = Product.create(
-  name: 'The Bridge Natural Bio Rice Drink',
-  description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
-  price: 13,
-  categories: 'Dairy free',
-  quantity: 1,
-  supplier_country: 'Italy',
-  calories: 47,
-  shop_name: 'iHerb'
-  # macros:
-)
-# file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
-# product9.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product9.product = product
-# product9.save
-p product9
+# product9 = Product.create(
+#   name: 'The Bridge Natural Bio Rice Drink',
+#   description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
+#   price: 13,
+#   categories: 'Dairy free',
+#   quantity: 1,
+#   supplier_country: 'Italy',
+#   calories: 47,
+#   shop_name: 'iHerb'
+#   # macros:
+# )
+# # file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
+# # product9.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
+# # product9.product = product
+# # product9.save
+# p product9
 
-product10 = Product.create(
-  name: 'The Bridge Natural Bio Rice Drink',
-  description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
-  price: 13,
-  categories: 'Dairy free',
-  quantity: 1,
-  supplier_country: 'Italy',
-  calories: 47,
-  shop_name: 'Spinneys'
-  # macros:
-)
-# file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
-# product10.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product10.product = product
-# product10.save
-p product10
+# product10 = Product.create(
+#   name: 'The Bridge Natural Bio Rice Drink',
+#   description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
+#   price: 13,
+#   categories: 'Dairy free',
+#   quantity: 1,
+#   supplier_country: 'Italy',
+#   calories: 47,
+#   shop_name: 'Spinneys'
+#   # macros:
+# )
+# # file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
+# # product10.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
+# # product10.product = product
+# # product10.save
+# p product10
 
-product11 = Product.create(
-  name: 'The Bridge Natural Bio Rice Drink',
-  description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
-  price: 13,
-  categories: 'Dairy free',
-  quantity: 1,
-  supplier_country: 'Italy',
-  calories: 47,
-  shop_name: 'iHerb'
-  # macros:
-)
-# file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
-# product11.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product11.product = product
-# product11.save
-p product11
+# product11 = Product.create(
+#   name: 'The Bridge Natural Bio Rice Drink',
+#   description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
+#   price: 13,
+#   categories: 'Dairy free',
+#   quantity: 1,
+#   supplier_country: 'Italy',
+#   calories: 47,
+#   shop_name: 'iHerb'
+#   # macros:
+# )
+# # file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
+# # product11.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
+# # product11.product = product
+# # product11.save
+# p product11
 
-product12 = Product.create(
-  name: 'The Bridge Natural Bio Rice Drink',
-  description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
-  price: 13,
-  categories: 'Dairy free',
-  quantity: 1,
-  supplier_country: 'Italy',
-  calories: 47,
-  shop_name: 'iHerb'
-  # macros:
-)
-# file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
-# product12.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product12.product = product
-# product12.save
-p product12
+# product12 = Product.create(
+#   name: 'The Bridge Natural Bio Rice Drink',
+#   description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
+#   price: 13,
+#   categories: 'Dairy free',
+#   quantity: 1,
+#   supplier_country: 'Italy',
+#   calories: 47,
+#   shop_name: 'iHerb'
+#   # macros:
+# )
+# # file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
+# # product12.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
+# # product12.product = product
+# # product12.save
+# p product12
 
-product13 = Product.create(
-  name: 'The Bridge Natural Bio Rice Drink',
-  description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
-  price: 13,
-  categories: 'Dairy free',
-  quantity: 1,
-  supplier_country: 'Italy',
-  calories: 47,
-  shop_name: 'Spinneys'
-  # macros:
-)
-# file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
-# product13.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product13.product = product
-# product13.save
-p product13
+# product13 = Product.create(
+#   name: 'The Bridge Natural Bio Rice Drink',
+#   description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
+#   price: 13,
+#   categories: 'Dairy free',
+#   quantity: 1,
+#   supplier_country: 'Italy',
+#   calories: 47,
+#   shop_name: 'Spinneys'
+#   # macros:
+# )
+# # file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
+# # product13.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
+# # product13.product = product
+# # product13.save
+# p product13
