@@ -3,6 +3,10 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+
+    if params[:category].present?
+      @products = @products.where('?=ANY(categories)', params[:category])
+    end
   end
 
   def show
@@ -23,5 +27,4 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :description, :price, :category, :quantity)
   end
-
 end

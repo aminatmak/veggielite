@@ -17,14 +17,12 @@
                   <%= @product.categories %>
 
                   <%= @product.supplier_country %>
-                  <%= @product.calories %>
-                  <%= @product.macros %>
               </h5>
             </div>
 
           </div>
           <div class="col-5">
-            <div class="card-date">
+            <div class="card-breakdown">
               <div class="card-price d-flex justify-content-between text-bold flex-shrink-1 bd-highlight py-3 rounded">
                 <h5 class="card-trip-pricing d-flex text-bold flex-shrink-1 bd-highlight">AED<%= @product.price %> </h5>
                 <div class="d-flex justify-content-between align-items-center">
@@ -33,14 +31,14 @@
                 </div>
               </div>
               <div class="justify-content-center align-items-center">
-                <p class="date">From:
-                <%= @product.macros %>
+                <p class="">
+                Calories: <%= @product.calories %>
                 </p>
-                <p class="date">To:
-                <%= @product.macros %>
+                <p class="">
+                Macros: <%= @product.macros %>
                 </p>
               </div>
-              <%= simple_form_for [@product, @order] do |r| %>
+              <%= simple_form_for @product do |r| %>
                 <%= r.button :submit, class:"btn btn-success w-100" %>
               <% end %>
             </div>
