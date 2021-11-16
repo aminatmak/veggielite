@@ -10,5 +10,5 @@ class Product < ApplicationRecord
   validates :supplier_country, presence: true
 
   validates :calories, presence: true
-  validates :shop_name, presence: true
+  validates :shop, presence: true
 end
