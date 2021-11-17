@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :initialize_session
   before_action :increment_visit_count
   before_action :load_cart
+  skip_before_action :verify_authenticity_token, if: :text_request?
 
   def index
     @products = Product.all
@@ -44,6 +45,10 @@ class ProductsController < ApplicationController
   def add_to_cart
     id = params[:id].to_i
     session[:cart] << id unless session[:cart].include?(id)
+
+    respond_to do |format|
+      format.text { render partial: 'products/cart_info', locals: { product_id: id, cart: session[:cart] }, formats: [:html] }
+    end
   end
 
   def remove_from_cart
@@ -68,6 +73,10 @@ class ProductsController < ApplicationController
   end
 
   def load_cart
-    @cart = Product.find(session[:cart])
+    @cart = session[:cart].present? ? Product.find(session[:cart]) : []
+  end
+
+  def text_request?
+    request.format.text?
   end
 end
