@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :shop
   has_many :order_product_relationships
-  has_many_attached :photos
+  has_one_attached :photo
 
   validates :name, presence: true
   validates :description, presence: true
