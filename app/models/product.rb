@@ -15,3 +15,4 @@ class Product < ApplicationRecord
 # CATEGORIES = ["Gluten free", "Dairy free", "Sugar free",
 #               "Vegan", "Vegetarian", "Pescetarian", "Organic"]
 # validates :categories, inclusion: { in: CATEGORIES }
+end
