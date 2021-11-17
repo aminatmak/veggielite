@@ -1,4 +1,4 @@
-#require "open-uri"
+require "open-uri"
 
 puts "Creating Veggielite's users"
 User.destroy_all
@@ -13,10 +13,9 @@ user1 = User.create(
   address: 'Al Barsha 1',
   password: 'ilovemeta'
 )
-# file = URI.open('https://image.shutterstock.com/image-photo/head-shot-close-portrait-overjoyed-260nw-1537134881.jpg')
-# user1.photos.attach(io: file, filename: 'suzy.jpg', content_type: 'image/jpg')
-# user1.user = user
-# user1.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142872/vegl/user/headshot-portrait-happy-indian-millennial-260nw-1529381102_hvilyd.webp')
+user1.photo.attach(io: file, filename: 'suzy.jpg', content_type: 'image/jpg')
+user1.save
 p user1
 
 user2 = User.create(
@@ -27,10 +26,9 @@ user2 = User.create(
   address: 'Al Qusais',
   password: "iloveveggielite"
 )
-# file = URI.open('https://image.shutterstock.com/image-photo/headshot-portrait-happy-indian-millennial-260nw-1529381102.jpg')
-# user2.photos.attach(io: file, filename: 'tabitha.jpg', content_type: 'image/jpg')
-# user2.user = user
-# user.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142872/vegl/user/headshot-picture-happy-caucasian-senior-260nw-1495419986_pylhj3.webp')
+user2.photo.attach(io: file, filename: 'tabitha.jpg', content_type: 'image/jpg')
+user2.save
 p user2
 
 user3 = User.create(
@@ -41,10 +39,9 @@ user3 = User.create(
   address: 'Barsha Heights',
   password: "iamsteven"
 )
-# file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Green_winter.jpg/1024px-Green_winter.jpg')
-# user3.photos.attach(io: file, filename: 'steven.jpg', content_type: 'image/jpg')
-# user3.user = user
-# user3.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142872/vegl/user/head-shot-close-portrait-overjoyed-260nw-1537134881_hqfe66.webp')
+user3.photo.attach(io: file, filename: 'steven.jpg', content_type: 'image/jpg')
+user3.save
 p user3
 
 puts "Done with the users"
@@ -56,12 +53,10 @@ shop1 = Shop.create(
   address: 'Dubai Festival City',
   phone_number: '80073232',
   email: 'help@carrefour.com'
-  # website: 'www.carrefouruae.com'
 )
-# file = URI.open('https://i1.wp.com/thepointshabibi.com/wp-content/uploads/2020/02/carrefour-uae-logo-promo-code-dubai-abu-dhabi-sharjah.png?fit=616%2C616&ssl=1')
-# shop1.photos.attach(io: file, filename: 'carrefour', content_type: 'image/jpg')
-# shop1.shop = shop
-# shop1.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142900/vegl/shop/carrefour-uae-logo-promo-code-dubai-abu-dhabi-sharjah_ha8ai2.png')
+shop1.photos.attach(io: file, filename: 'carrefour', content_type: 'image/jpg')
+shop1.save
 p shop1
 
 shop2 = Shop.create(
@@ -69,12 +64,10 @@ shop2 = Shop.create(
   address: 'California',
   phone_number: '012354536987',
   email: 'help@iherb.com'
-  # website: 'www.iherb.com'
 )
-# file = URI.open('https://cdn.phenompeople.com/CareerConnectResources/IHINGLOBAL/social/1024x512-1624016160208.jpg')
-# shop2.photos.attach(io: file, filename: 'iherb', content_type: 'image/jpg')
-# shop2.shop = shop
-# shop2.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142900/vegl/shop/1024x512-1624016160208_gifmhb.webp')
+shop2.photos.attach(io: file, filename: 'iherb', content_type: 'image/jpg')
+shop2.save
 p shop2
 
 shop3 = Shop.create(
@@ -82,12 +75,10 @@ shop3 = Shop.create(
   address: 'Isle of Bute',
   phone_number: '044583828575',
   email: 'help@buteisland.com'
-  # website: 'www.buteisland.com'
 )
-# file = URI.open('https://www.buteisland.com/wp-content/themes/bif/img/logo.png')
-# shop3.photos.attach(io: file, filename: 'buteisland', content_type: 'image/jpg')
-# shop3.shop = shop
-# shop3.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142901/vegl/shop/logo_c9pxay.png')
+shop3.photos.attach(io: file, filename: 'buteisland', content_type: 'image/jpg')
+shop3.save
 p shop3
 
 shop4 = Shop.create(
@@ -95,12 +86,10 @@ shop4 = Shop.create(
   address: 'Dubai Mall',
   phone_number: '80073232',
   email: 'help@spinneys.com'
-  # website: 'www.spinneys.com'
 )
-# file = URI.open('https://gulfbusiness.com/wp-content/uploads/2018/01/spinneys-dubai.jpg')
-# shop4.photos.attach(io: file, filename: 'spinneys', content_type: 'image/jpg')
-# shop4.shop = shop
-# shop4.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142901/vegl/shop/spinneys-dubai_lhhmjj.jpg')
+shop4.photos.attach(io: file, filename: 'spinneys', content_type: 'image/jpg')
+shop4.save
 p shop4
 
 shop5 = Shop.create(
@@ -108,12 +97,10 @@ shop5 = Shop.create(
   address: 'Barsha Heights',
   phone_number: '80073232',
   email: 'help@lulu.com'
-  # website: 'www.luluhypermarket.com'
 )
-#file = URI.open('https://www.timeskuwait.com/news/wp-content/uploads/2021/07/DAJEEJ-PHOTO-3-e1625561988700.jpg')
-#shop5.photos.attach(io: file, filename: 'lulus', content_type: 'image/jpg')
-# shop5.shop = shop
-# shop5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142900/vegl/shop/DAJEEJ-PHOTO-3-e1625561988700_p41bb4.jpg')
+shop5.photos.attach(io: file, filename: 'lulus', content_type: 'image/jpg')
+shop5.save
 p shop5
 
 puts "Done with the shops"
@@ -131,10 +118,9 @@ product1 = Product.create(
   shop: shop1,
   macros: { protein: 2, carbs: 34, fat: 0 }
 )
-# file = URI.open('https://s3.images-iherb.com/brm/brm11462/w/3.jpg')
-# product1.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product1.product = product
-# product1.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142921/vegl/product/3_rzmluh.webp')
+product1.photo.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
+product1.save
 p product1
 
 product2 = Product.create(
@@ -148,10 +134,9 @@ product2 = Product.create(
   shop: shop2,
   macros: { protein: 0.1, carbs: 12, fat: 1.4 }
 )
-# file = URI.open('https://cdnprod.mafretailproxy.com/sys-master-root/h8c/h24/16700105261086/1304626_main.jpg_1700Wx1700H')
-# product2.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product2.product = product
-# product2.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142921/vegl/product/1304626_main_scyf8a.webp')
+product2.photo.attach(io: file, filename: 'ricemilk', content_type: 'image/jpg')
+product2.save
 p product2
 
 product3 = Product.create(
@@ -165,10 +150,9 @@ product3 = Product.create(
   shop: shop3,
   macros: { protein: 0, carbs: 0.96, fat: 0 }
 )
-# file = URI.open('https://cdnprod.mafretailproxy.com/sys-master-root/h37/h1d/13300883488798/1445701_main.jpg_1700Wx1700H')
-# product3.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product3.product = product
-# product3.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142922/vegl/product/1445701_main_fc4d62.jpg')
+product3.photo.attach(io: file, filename: 'cubes', content_type: 'image/jpg')
+product3.save
 p product3
 
 product4 = Product.create(
@@ -182,10 +166,9 @@ product4 = Product.create(
   shop: shop4,
   macros: { protein: 0.1, carbs: 19, fat: 24.4 }
 )
-# file = URI.open('https://cdnprod.mafretailproxy.com/sys-master-root/h12/h22/15225779290142/1713607_main.jpg_1700Wx1700H')
-# product4.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product4.product = product
-# product4.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142922/vegl/product/1713607_main_plicnb.jpg')
+product4.photo.attach(io: file, filename: 'sheese1', content_type: 'image/jpg')
+product4.save
 p product4
 
 product5 = Product.create(
@@ -199,10 +182,9 @@ product5 = Product.create(
   shop: shop5,
   macros: { protein: 1.4, carbs: 24.7, fat: 0.6 }
 )
-# file = URI.open('https://uploads.myfreshdelmonte.com/public/uploads/catalog/product/thumb/m/a/Mango-Kent2__1952542097.jpg')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142923/vegl/product/Mango-Kent2__1952542097_1_r6ffnx.jpg')
+product5.photo.attach(io: file, filename: 'mango', content_type: 'image/jpg')
+product5.save
 p product5
 
 product6 = Product.create(
@@ -216,10 +198,9 @@ product6 = Product.create(
   shop: shop1,
   macros: { protein: 20, carbs: 5, fat: 13 }
 )
-# file = URI.open('https://cdnprod.mafretailproxy.com/sys-master-root/hdd/hfd/11614879154206/1194875_main.jpg_1700Wx1700H')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142922/vegl/product/1194875_main_huo4aj.jpg')
+product6.photo.attach(io: file, filename: 'salmon', content_type: 'image/jpg')
+product6.save
 p product6
 
 product7 = Product.create(
@@ -233,10 +214,9 @@ product7 = Product.create(
   shop: shop2,
   macros: { protein: 6, carbs: 0, fat: 5 }
 )
-# file = URI.open('https://cdnprod.mafretailproxy.com/sys-master-root/h3a/h57/15071151456286/1250218_main.jpg_1700Wx1700H')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142922/vegl/product/1250218_main_ze2f9q.webp')
+product7.photo.attach(io: file, filename: 'eggs', content_type: 'image/jpg')
+product7.save
 p product7
 
 product8 = Product.create(
@@ -250,10 +230,9 @@ product8 = Product.create(
   shop: shop3,
   macros: { protein: 1.9, carbs: 26, fat: 0.9 }
 )
-# file = URI.open('https://www.luluhypermarket.com/medias/1188645-01.jpg-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wzMDYxMDR8aW1hZ2UvanBlZ3xpbWFnZXMvaDAxL2hkZC9oMDAvOTI2Nzk1NDkwOTIxNC5qcGd8YTY1YjFkN2ExN2NhNjUzNmJhYTkyYzEzN2JmZjU2NWY3NDVkMmNlMmJlNzc3YTBlYTY2OWUzZWI3MWVjYmRlYg')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142921/vegl/product/1188645-01_n7orsy.jpg')
+product8.photo.attach(io: file, filename: 'honey', content_type: 'image/jpg')
+product8.save
 p product8
 
 product9 = Product.create(
@@ -267,10 +246,9 @@ product9 = Product.create(
   shop: shop4,
   macros: { protein: 0, carbs: 30, fat: 0 }
 )
-# file = URI.open('https://www.luluhypermarket.com/medias/1438490-01.jpg-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w5ODgxMnxpbWFnZS9qcGVnfGltYWdlcy9oYmMvaDQ3L2gwMC85MjQ3MjgyMTAyMzAyLmpwZ3xjNzVjNDYwODNlZjM4MTQ4OGIyYjc5ODg2MGFiZmFjNDIzZTFkYTc5OTlhMjRlNGI4ZjVjM2FjMzRjMmJmMTFm')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142922/vegl/product/1438490-01_utihzx.jpg')
+product9.photo.attach(io: file, filename: 'vanilla', content_type: 'image/jpg')
+product9.save
 p product9
 
 product10 = Product.create(
@@ -284,10 +262,9 @@ product10 = Product.create(
   shop: shop5,
   macros: { protein: 6, carbs: 37, fat: 10 }
 )
-# file = URI.open('https://s3.images-iherb.com/npa/npa77180/w/22.jpg')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142921/vegl/product/22_xnmkkp.jpg')
+product10.photo.attach(io: file, filename: 'granola', content_type: 'image/jpg')
+product10.save
 p product10
 
 product11 = Product.create(
@@ -301,10 +278,9 @@ product11 = Product.create(
   shop: shop1,
   macros: { protein: 6, carbs: 1.3, fat: 28 }
 )
-# file = URI.open('https://www.buteisland.com/wp-content/uploads/2017/11/original-1.jpg')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142923/vegl/product/original-1_zyvviv.jpg')
+product11.photo.attach(io: file, filename: 'creamy', content_type: 'image/jpg')
+product11.save
 p product11
 
 product12 = Product.create(
@@ -318,10 +294,9 @@ product12 = Product.create(
   shop: shop2,
   macros: { protein: 0, carbs: 10, fat: 0 }
 )
-# file = URI.open('https://uploads.myfreshdelmonte.com/public/uploads/catalog/product/preview/f/i/fish-spice-200ml__1374064120.jpg')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142922/vegl/product/fish-spice-200ml__1374064120_2_m1vewn.jpg')
+product12.photo.attach(io: file, filename: 'fishspice', content_type: 'image/jpg')
+product12.save
 p product12
 
 product13 = Product.create(
@@ -335,10 +310,9 @@ product13 = Product.create(
   shop: shop3,
   macros: { protein: 6, carbs: 8, fat: 12 }
 )
-# file = URI.open('https://cdn.shopify.com/s/files/1/0578/7035/2563/products/PistachioButter1.png?v=1632993024')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142923/vegl/product/PistachioButter1_na1r9w.png')
+product13.photo.attach(io: file, filename: 'butter', content_type: 'image/jpg')
+product13.save
 p product13
 
 product14 = Product.create(
@@ -352,10 +326,9 @@ product14 = Product.create(
   shop: shop4,
   macros: { protein: 2, carbs: 3, fat: 5 }
 )
-# file = URI.open('https://cdn.shopify.com/s/files/1/0578/7035/2563/products/MiniPBCups_540x.png?v=1634036417')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142923/vegl/product/MiniPBCups_540x_dbq1rd.png')
+product14.photo.attach(io: file, filename: 'buttercups', content_type: 'image/jpg')
+product14.save
 p product14
 
 product15 = Product.create(
@@ -369,10 +342,9 @@ product15 = Product.create(
   shop: shop5,
   macros: { protein: 4, carbs: 8, fat: 1.5 }
 )
-# file = URI.open('https://cdn.shopify.com/s/files/1/0578/7035/2563/products/16247997280Cropped_1.jpg?v=1632134117')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142922/vegl/product/16247997280Cropped_1_e89htf.jpg')
+product15.photo.attach(io: file, filename: 'cacoa', content_type: 'image/jpg')
+product15.save
 p product15
 
 product16 = Product.create(
@@ -386,10 +358,9 @@ product16 = Product.create(
   shop: shop1,
   macros: { protein: 6, carbs: 6.1, fat: 14 }
 )
-# file = URI.open('https://cdn.shopify.com/s/files/1/0578/7035/2563/products/Almonds_540x.png?v=1635418188')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142922/vegl/product/Almonds_540x_p8w3y5.png')
+product16.photo.attach(io: file, filename: 'almond', content_type: 'image/jpg')
+product16.save
 p product16
 
 product17 = Product.create(
@@ -403,10 +374,9 @@ product17 = Product.create(
   shop: shop2,
   macros: { protein: 5, carbs: 11, fat: 2 }
 )
-# file = URI.open('https://cdn.shopify.com/s/files/1/0578/7035/2563/products/BEB04505xCropped_540x.jpg?v=1634037279')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142922/vegl/product/BEB04505xCropped_540x_ydolfw.jpg')
+product17.photo.attach(io: file, filename: 'crackers', content_type: 'image/jpg')
+product17.save
 p product17
 
 product18 = Product.create(
@@ -420,10 +390,9 @@ product18 = Product.create(
   shop: shop3,
   macros: { protein: 0, carbs: 8, fat: 0 }
 )
-# file = URI.open('https://cdn.shopify.com/s/files/1/0578/7035/2563/products/0_1_1_540x.jpg?v=1631624598')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142921/vegl/product/0_1_1_540x_enye0u.jpg')
+product18.photo.attach(io: file, filename: 'fruit', content_type: 'image/jpg')
+product18.save
 p product18
 
 product19 = Product.create(
@@ -437,10 +406,9 @@ product19 = Product.create(
   shop: shop4,
   macros: { protein: 1, carbs: 5, fat: 13 }
 )
-# file = URI.open('https://cdn.shopify.com/s/files/1/0578/7035/2563/products/Untitled_0ad8b738-1829-46f6-bf76-449979b10ee4.png?v=1635334696')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142923/vegl/product/Untitled_0ad8b738-1829-46f6-bf76-449979b10ee4_fwbq9c.png')
+product19.photo.attach(io: file, filename: 'coconut', content_type: 'image/jpg')
+product19.save
 p product19
 
 product20 = Product.create(
@@ -454,8 +422,7 @@ product20 = Product.create(
   shop: shop5,
   macros: { protein: 1.5, carbs: 6, fat: 1 }
 )
-# file = URI.open('https://cdn.shopify.com/s/files/1/0578/7035/2563/products/1.Riced_UK_Tomato_Front_1_2400x2400-600x600-removebg-preview_1_540x.png?v=1632554759')
-# product5.photos.attach(io: file, filename: 'pancake', content_type: 'image/jpg')
-# product5.product = product
-# product5.save
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142921/vegl/product/1.Riced_UK_Tomato_Front_1_2400x2400-600x600-removebg-preview_1_540x_dq4gvj.png')
+product20.photo.attach(io: file, filename: 'riced', content_type: 'image/jpg')
+product20.save
 p product20
