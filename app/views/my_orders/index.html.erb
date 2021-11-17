@@ -12,3 +12,7 @@
 </div>
 
 <%= render "order" %>
+
+<%= @orders.each do |order| %>
+  <%= order %>
+<% end %>
