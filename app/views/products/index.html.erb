@@ -6,94 +6,89 @@
 <div class="container position absolute">
   <div class="row">
     <div class="col">
-      <div data-controller="search-movies">
+      <div data-controller="search-products">
         <%= form_with url: products_path, method: :get, html: { class:
-          'mb-4', data: { search_products_target: 'form' } } do |f| %>
+            'mb-4', data: { search_products_target: 'form' } } do |f| %>
           <%= f.text_field :query,
                           class: "form-control",
                           placeholder: 'Search',
                           value: params[:query],
-                          data: { search_movies_target: 'input' } %>
-
-      <div class="navigation menu_items position-relative">
-        <ul class="list-inline">
-          <li class="gluten-free list-inline-item">
+                          data: {
+                            search_products_target: 'input',
+                            action: 'keyup->search-products#search'
+                            } %>
+        <% end %>
+        <div class="navigation menu_items d-flex justify-content-center">
+          <ul class="list-inline">
+            <li class="gluten-free list-inline-item">
               <div>
-                <%= link_to products_path(category: "gluten free"), class:'nav-link' do %>
-                <i class="fas fa-cookie-bite"></i>
+                <%= link_to products_path, class:'nav-link' do %>
+                  <i class="fas fa-utensils"></i>
                 <% end %>
               </div>
-            Gluten free
-          </li>
-          <li class="sugar-free list-inline-item">
+              All Products
+            </li>
+            <li class="gluten-free list-inline-item">
+              <div>
+                <%= link_to products_path(category: "gluten free"), class:'nav-link' do %>
+                  <i class="fas fa-cookie-bite"></i>
+                <% end %>
+              </div>
+              Gluten free
+            </li>
+            <li class="sugar-free list-inline-item">
               <div>
                 <%= link_to products_path(category: "sugar free"),class:'nav-link' do %>
                 <i class="fas fa-birthday-cake"></i>
                 <% end %>
               </div>
-            Sugar free
-          </li>
-          <li class="dairy-free list-inline-item">
+              Sugar free
+            </li>
+            <li class="dairy-free list-inline-item">
               <div>
                 <%= link_to products_path(category: "dairy free"),class:'nav-link' do %>
-                <i class="fas fa-cheese"></i>
+                <i class="fas fa-ice-cream"></i>
                 <% end %>
               </div>
-            Dairy free
-          </li>
-          <li class="vegan list-inline-item">
+              Dairy free
+            </li>
+            <li class="vegan list-inline-item">
               <div>
                 <%= link_to products_path(category: "vegan"),class:'nav-link' do %>
                 <i class="fas fa-seedling"></i>
                 <% end %>
               </div>
-            Vegan
-          </li>
-          <li class="vegetarian list-inline-item">
+              Vegan
+            </li>
+            <li class="vegetarian list-inline-item">
               <div>
                 <%= link_to products_path(category: "vegetarian"),class:'nav-link' do %>
                 <i class="fas fa-carrot"></i>
                 <% end %>
               </div>
-            Vegetarian
-          </li>
-          <li class="pescetarian list-inline-item">
+              Vegetarian
+            </li>
+            <li class="pescetarian list-inline-item">
               <div>
                 <%= link_to products_path(category: "pescetarian"),class:'nav-link' do %>
                 <i class="fas fa-fish"></i>
                 <% end %>
               </div>
-            Pescetarian
-          </li>
-          <li class="organic list-inline-item">
+              Pescetarian
+            </li>
+            <li class="organic list-inline-item">
               <div>
                 <%= link_to products_path(category: "organic"),class:'nav-link' do %>
                 <i class="fab fa-pagelines"></i>
                 <% end %>
               </div>
-            Organic
-          </li>
-        </ul>
-      </div>
-      <h1>Veggielite products</h1>
-      <div class="cards">
-        <% @products.each do |product| %>
-          <div class="card-trip position relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1493770348161-369560ae357d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2370&q=80); mx-3">
-            <div class="card-trip-infos">
-              <div>
-                <%= link_to product.name, product, class: 'nav-link' %>
-                <%= product.supplier_country %>
-                <%= product.calories %>
-                <%= product.macros %>
-                <%= product.shop.name %>
-              </div>
-              <div class="d-flex justify-content-center p-3">
-                <h2 class="card-trip-pricing mx-3">AED <%= product.price %></h2>
-                <%= link_to 'Add to cart', product, class: 'btn btn-warning' %>
-              </div>
-            </div>
-          </div>
-        <% end %>
+              Organic
+            </li>
+          </ul>
+        </div>
+
+        <%= render 'list', products: @products %>
+
       </div>
     </div>
   </div>
