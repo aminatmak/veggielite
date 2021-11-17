@@ -4,21 +4,23 @@
       <div class="movie-card" data-controller="edit-movie" data-edit-movie-target="card">
         <div class="cards">
           <% @products.each do |product| %>
-            <div class="card-trip position relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1493770348161-369560ae357d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2370&q=80); mx-3">
+            <div class="card-trip position relative">
+
+              <%= image_tag "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1315&q=80 mx-3" %>
               <div class="card-trip-infos">
                 <div>
                   <%= link_to product.name, product, class: 'nav-link' %>
-                  <%= product.supplier_country %>
-                  <%= product.calories %>
-                  <%= product.macros %>
-                  <%= product.shop.name %>
+                  <p> <strong>Supplier country:</strong> <%= product.supplier_country %> </p>
+                  <p> <strong> Calories:</strong> <%= product.calories %> </p>
+                  <p> <strong>Macros:</strong> <%= product.macros %> </p>
+                  <p> <strong>Shop:</strong> <%= product.shop.name %> </p>
                 </div>
-                <div class="d-flex justify-content-center p-3">
+                <div class="d-flex justify-content-center p-3" data-controller="cart">
                   <h2 class="card-trip-pricing mx-3">AED <%= product.price %></h2>
-                  <% if @cart.include?(product) %>
-                    <%= button_to 'Remove From Cart', remove_from_cart_product_path(product), method: :delete %>
+                  <% if @cart.include?(product.id) %>
+                    <%= button_to 'Remove From Cart', remove_from_cart_product_path(product), method: :delete, data: { action: 'click->cart#removeProduct' } %>
                   <% else %>
-                    <%= button_to 'Add to Cart', add_to_cart_product_path(product), method: :post %>
+                    <%= link_to 'Add to Cart', add_to_cart_product_path(product), method: :post, data: { action: 'click->cart#addProduct' } %>
                   <% end %>
                 </div>
               </div>
