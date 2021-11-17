@@ -14,21 +14,16 @@
       <li class="nav-item active">
         <%= link_to "Home", root_path, class:"btn btn-ghost " %>
       </li>
-      <li class="nav-item">
-        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-placement="left" title="Tooltip on left">
-          <i class="fas fa-shopping-cart">
-            <span class="badge badge-light">
-              4
-            </span>
-          </i>
-        </button>
-        <a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Products">
-          <i class="fas fa-shopping-cart">
-            <span class="badge badge-light">
-              4
-            </span>
-          </i>
-        </a>
+      <li class="nav-item" data-controller="cart">
+        <% if @cart %>
+          <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-placement="left" title="Tooltip on left">
+            <i class="fas fa-shopping-cart">
+              <span class="badge badge-light">
+                <%= @cart.size %>
+              </span>
+            </i>
+          </button>
+        <% end %>
       </li>
       <%# <li class="nav-item">
         <%= link_to "Messages", "#", class: "nav-link" %>
