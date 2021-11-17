@@ -1,0 +1,14 @@
+<div class="container">
+  <%# TABS  %>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="past-tab" data-toggle="tab" href="#past" role="tab" aria-controls="past" aria-selected="true">Past Orders</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="current-tab" data-toggle="tab" href="#current" role="tab" aria-controls="current" aria-selected="false">Current Orders</a>
+    </li>
+  </ul>
+  <%# End of TABS %>
+</div>
+
+<%= render "order" %>
