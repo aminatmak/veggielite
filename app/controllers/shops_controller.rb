@@ -1,6 +1,6 @@
 class ShopsController < ApplicationController
   def index
-    @shops = policy_scope(Shop).order(created_at: :asc)
+    @shops = Shop.all
 
     @markers = @shops.geocoded.map do |shop|
       {

@@ -7,18 +7,34 @@ class ProductsController < ApplicationController
     if params[:category].present?
       @products = @products.where('?=ANY(categories)', params[:category])
     end
+
+    if params[:query].present?
+      sql_query = " \
+         products.name ILIKE :query \
+         OR products.description ILIKE :query \
+         OR products.supplier_country ILIKE :query \
+         OR shops.name ILIKE :query \
+       "
+      @products = Product.joins(:shop).where(sql_query, query: "%#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'products/list', locals: { products: @products }, formats: [:html] }
+    end
   end
 
   def show
     @product = Product.find(params[:id])
   end
 
-  def create
-    @product = Product.create(product_params)
-    if @product.save
-      redirect_to @product, notice: 'Product was successfully created.'
-    else
-      render :new
+  def update
+    @product = Product.find(params[:id])
+    @product.update(product_params)
+
+    respond_to do |format|
+      format.html { redirect_to products_path }
+      format.text { render partial: 'products/product_infos', locals: { product: @product }, formats: [:html] }
     end
   end
 
