@@ -15,7 +15,11 @@
                 </div>
                 <div class="d-flex justify-content-center p-3">
                   <h2 class="card-trip-pricing mx-3">AED <%= product.price %></h2>
-                  <%= link_to 'Add to cart', product, class: 'btn btn-warning' %>
+                  <% if @cart.include?(product) %>
+                    <%= button_to 'Remove From Cart', remove_from_cart_product_path(product), method: :delete %>
+                  <% else %>
+                    <%= button_to 'Add to Cart', add_to_cart_product_path(product), method: :post %>
+                  <% end %>
                 </div>
               </div>
             </div>
