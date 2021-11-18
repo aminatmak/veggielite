@@ -77,7 +77,7 @@ class ProductsController < ApplicationController
   end
 
   def load_cart
-    @cart = session[:cart].present? ? Product.find(session[:cart]) : []
+    @cart = session[:cart] || []
   end
 
   def text_request?

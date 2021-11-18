@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
 
     if order.persisted?
       session[:cart] = []
-      order.update(checkout_session_id: session.id)
+      order.update(checkout_session_id: session.id, state: 'completed')
       redirect_to order_path(order)
     end
   end
