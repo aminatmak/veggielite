@@ -1,0 +1,118 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1493770348161-369560ae357d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2370&q=80); mx-3">
+  <div class="card-trip-infos">
+    <div>
+      <%= @order.shop.name %>
+      <%= @order.shop.address %>
+      <%= @order.shop.phone_number %>
+      <%= @order.shop.email %>
+    </div>
+  </div>
+</div>
+
+<!-- restaurant info -->
+<div class="bg-white">
+  <div class="container p-3">
+    <div class="row">
+      <div class="col-md-8">
+        <h3>Your Dashboard</h3>
+        <p>Address: Internet city, Dubai </p>
+        <p>Delivery Date: Oct 4 2021 </p>
+      </div>
+      <div class="col-md-4">
+        <img src="https://f.roocdn.com/images/menus/70997/header-image.jpg?width=740&height=320&auto=webp&format=jpg&fit=crop&v=1531393618" alt="" class="w-100">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /restaurant info -->
+
+<!-- restaurant menu / checkout-->
+<div class="container py-3">
+  <div class="row">
+    <div class="col-md-8">
+
+    <!-- turn this into an alert (warning) -->
+    <div class="alert alert-warning" role="alert">
+      Turn on notifications for delivered groceries <strong>.</strong>.
+    </div>
+
+    <h2>@order</h2>
+
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-<%= @order.id %>" aria-expanded="true" aria-controls="collapse-<%= @order.id %>">
+              <p class=""><strong><%= @order.user.first_name %> <%= @order.user.last_name %> - <%= @order.products.count %> - <%= @order.products.map(&:price).sum %>€</strong></p>
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapse-<%= @order.id %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body cards">
+            <% @order.products.each do |product| %>
+              <div class="card p-3 mb-3 flex-row">
+                <div class="row w-100">
+                  <div class="col-4">
+                    <div class="avatar">
+                      <% if product.photo.attached? %>
+                        <%= cl_image_tag product.photo.key, class: 'avatar' %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="col-8 px-3 grid-3">
+                    <div class="d-flex justify-content-between">
+                      <p><%= product.name %></p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-3">
+                      <p><small>Price</small></p> <p><%= product.price %></p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-2 b@order-bottom">
+                      <p><small>Quantity</small></p> <p><strong><%= product.quantity %></strong></p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-3">
+                      <p>Total</p>
+                      <p><strong><%= product.price * product.quantity %></strong></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <!-- checkout -->
+    <div class="bg-white b@order p-3 sticky-top">
+      <a href="#" class="btn btn-primary w-100">Delivery Locations</a>
+
+      <div class="d-flex justify-content-between mt-3">
+        <p><strong>Dubai</strong> (1)</p>
+        <p>£4.95</p>
+      </div>
+
+      <div class="d-flex justify-content-between mt-3">
+        <p><strong>Sharjah</strong> (2)</p>
+        <p>£11.90</p>
+      </div>
+
+      <div class="d-flex justify-content-between mt-3 b@order-bottom">
+        <p><strong>Abu Dhabi</strong> (1)</p>
+        <p>£6.95</p>
+      </div>
+
+      <div class="d-flex justify-content-between mt-3">
+        <p><strong>Total</strong></p>
+        <p><strong>£23.80</strong></p>
+      </div>
+    </div>
+    <!-- /checkout -->
+  </div>
+</div>
+</div>

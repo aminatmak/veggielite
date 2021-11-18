@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     resources :orders, only: [:create]
   end
   resources :shops, only: [:index, :show]
-  resources :orders, only: [:destroy]
+  resources :orders, only: [:show, :destroy]
   get '/my_orders', to: 'my_orders#my_orders'
-  get '/profile', to: 'profiles#profile'
 end

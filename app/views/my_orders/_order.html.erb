@@ -26,6 +26,9 @@
       </div>
     </div>
     <!-- /navbar -->
+    <% order.products.each do |product| %>
+      <%= product.name %>
+    <% end %>
 
     <!-- restaurant info -->
     <div class="bg-white">
@@ -57,40 +60,10 @@
 
           <!-- make a card -->
           <div class="card p-3 mb-3">
-            <p class=""><strong>Bread</strong></p>
-            <p class=""><small>Whole wheat bread</small></p>
-            <span class="">£5.95</span>
+            <p class=""><strong>@product.name</strong></p>
+            <p class=""><small>@product.description</small></p>
+            <span class="">@product.price</span>
           </div>
-
-          <!-- make a card -->
-          <div class="card p-3 mb-3">
-            <p class=""><strong>Romaine lettuce</strong></p>
-            <p class=""><small>Green lettuce</small></p>
-            <span class="">£5.95</span>
-          </div>
-
-          <!-- make a card -->
-          <div class="card p-3 mb-3">
-            <p class=""><strong>Grains</strong></p>
-            <p class=""><small>Granola</small></p>
-            <span class="">£5.95</span>
-          </div>
-
-          <!-- make a card -->
-          <div class="card p-3 mb-3">
-            <p class=""><strong>Cheese</strong></p>
-            <p class=""><small>mozzarella</small></p>
-            <span class="">£5.95</span>
-          </div>
-
-          <!-- make a card -->
-          <div class="card p-3 mb-3">
-            <p class=""><strong>Condiments Package</strong></p>
-            <p class=""><small>Italian dressing, Mayonnaise, Ranch dressing</small></p>
-            <span class="">£5.95</span>
-          </div>
-          <!-- /menu -->
-        </div>
 
         <div class="col-md-4">
           <!-- checkout -->
