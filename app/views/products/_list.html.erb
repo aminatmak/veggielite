@@ -9,7 +9,7 @@
   </p>
   <div class="products">
     <%# <% products.each do |product| %>
-      <%= render 'product_infos', product: @products %>
+      <%= render partial: 'product_infos', locals: { products: products, cart: cart } %>
     <%# <% end %>
   </div>
 </div>

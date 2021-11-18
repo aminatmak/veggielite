@@ -1,3 +1,4 @@
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1493770348161-369560ae357d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2370&q=80); mx-3">
   <div class="card-trip-infos">
     <div>
@@ -115,4 +116,28 @@
     <!-- /checkout -->
   </div>
 </div>
+=======
+<!-- <div class="container">
+  <div class="col">
+    <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
+    <ul class="list-unstyled">
+      <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
+      <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount_cents %></li>
+      </li>
+    </ul>
+    <p>Estimated delivery in <strong>15-30 minutes</strong></p>
+  </div>
+  <% @order.products.each do |product| %>
+    <div class="row py-4">
+      <div class="col-md-3"><%= cl_image_tag product.photo.key, width: '100%' %></div>
+      <div class="col">
+        <ul class="list-unstyled">
+          <li><strong>Product</strong> <%= product.name %></li>
+          <li><strong>TOTAL</strong> <%= humanized_money_with_symbol product.price_cents %></li>
+          </li>
+        </ul>
+        <p>Estimated delivery in <strong>15-30 minutes</strong></p>
+      </div>
+    </div>
+  <% end %> -->
 </div>
