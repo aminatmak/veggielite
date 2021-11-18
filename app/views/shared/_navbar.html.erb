@@ -54,11 +54,11 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <%# <%= render 'products/product_infos', product: @product, cart: @cart %> %>
+          Here goes the product list
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Checkout</button>
+          <%= button_to 'Checkout', orders_path %>
         </div>
       </div>
     </div>

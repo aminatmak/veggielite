@@ -1,33 +1,35 @@
 class OrdersController < ApplicationController
   def create
-    product = Product.find(params[:product_id])
-    order = Order.create!(
-      product: product,
-      product_sku: product.sku,
-      amount: product.price,
+    # 1) you fetch the products to be bought(cart)
+    # 2) you calculate their sum value
+    # 3) you create the order with state, user and amount
+    # 4) you create the order_product_relationships
+
+    products = Product.find(session[:cart])
+    order = Order.new(
       state: 'pending',
       user: current_user,
-      shop: product.shop
+      amount_cents: products.pluck(:price_cents).sum
     )
 
+    products.each { |product| order.order_product_relationships.build(product: product) }
+    order.save
+
     session = Stripe::Checkout::Session.create(
-      line_items: [{
-        name: 'Product',
-        amount: 1000,
-        currency: 'eur',
-        quantity: 1
-      }],
+      line_items: products.map { |product| { name: product.name, quantity: 1, amount: product.price_cents, currency: 'eur' } },
       payment_method_types: ['card'],
       success_url: order_url(order),
       cancel_url: order_url(order)
     )
 
-    order.update(checkout_session_id: session.id)
-    redirect_to order_path(order)
+    if order.persisted?
+      session[:cart] = []
+      order.update(checkout_session_id: session.id)
+      redirect_to order_path(order)
+    end
   end
 
   def show
     @order = Order.find(params[:id])
-    # @order = current_user.orders.find(params[:id])
   end
 end

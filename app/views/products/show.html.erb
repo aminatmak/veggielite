@@ -44,14 +44,8 @@
                 Fat: <%= @product.macros['fat'] %>
                 </p>
               </div>
-              <%= simple_form_for @product do |r| %>
-                <%= r.button :submit, class:"btn btn-success w-100" %>
-              <% end %>
             </div>
-              <%= form_tag orders_path do %>
-                <%= hidden_field_tag 'product_id', @product.id %>
-                <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-              <% end %>
+            <%= render partial: 'cart_info', locals: { product_id: @product.id, cart: @cart }%>
           </div>
         </div>
       </div>
