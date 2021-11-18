@@ -9,9 +9,12 @@ Rails.application.routes.draw do
       post :add_to_cart
       delete :remove_from_cart
     end
-    resources :orders, only: [:show, :create]
+  end
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
   end
   resources :shops, only: [:index, :show]
   resources :orders, only: [:destroy]
   get '/my_orders', to: 'my_orders#my_orders'
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 end

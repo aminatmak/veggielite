@@ -48,6 +48,10 @@
                 <%= r.button :submit, class:"btn btn-success w-100" %>
               <% end %>
             </div>
+              <%= form_tag orders_path do %>
+                <%= hidden_field_tag 'product_id', @product.id %>
+                <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+              <% end %>
           </div>
         </div>
       </div>
