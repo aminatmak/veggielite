@@ -1,4 +1,8 @@
 class OrdersController < ApplicationController
+  def show
+    @order = current_user.orders.find(params[:id])
+  end
+
   def create
     @order = Order.new
     # Assigning a user to a specific booking

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       post :add_to_cart
       delete :remove_from_cart
     end
-    resources :orders, only: [:create]
+    resources :orders, only: [:show, :create]
   end
   resources :shops, only: [:index, :show]
   resources :orders, only: [:destroy]

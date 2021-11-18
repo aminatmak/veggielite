@@ -24,7 +24,7 @@
           <div class="col-5">
             <div class="card-breakdown">
               <div class="card-price d-flex justify-content-between text-bold flex-shrink-1 bd-highlight py-3 rounded">
-                <h5 class="card-trip-pricing d-flex text-bold flex-shrink-1 bd-highlight">AED<%= @product.price %> </h5>
+                <h5 class="card-trip-pricing d-flex text-bold flex-shrink-1 bd-highlight"> <%= humanized_money_with_symbol(@product.price) %> </h5>
                 <div class="d-flex justify-content-between align-items-center">
                   <i class="card-star far fa-star pl-2"></i>
                   <h5 class="mb-0 px-2"> <%= @product.quantity %> </h5>
@@ -35,7 +35,13 @@
                 Calories: <%= @product.calories %>
                 </p>
                 <p class="">
-                Macros: <%= @product.macros %>
+                Protein: <%= @product.macros['protein'] %>
+                </p>
+                <p class="">
+                Carbs: <%= @product.macros['carbs'] %>
+                </p>
+                <p class="">
+                Fat: <%= @product.macros['fat'] %>
                 </p>
               </div>
               <%= simple_form_for @product do |r| %>

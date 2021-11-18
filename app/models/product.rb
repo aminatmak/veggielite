@@ -5,6 +5,7 @@ class Product < ApplicationRecord
 
   validates :name, presence: true
   validates :description, presence: true
+  monetize :price_cents
   validates :price, presence: true
   validates :quantity, presence: true
   validates :supplier_country, presence: true
