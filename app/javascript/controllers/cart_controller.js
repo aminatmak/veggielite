@@ -5,10 +5,12 @@ export default class extends Controller {
 
   addProduct(event) {
     event.preventDefault();
-    const url = this.productTarget.href
+    const url = this.productTarget.href;
     fetch(url, {
       method: 'POST',
-      headers: { 'Accept': 'text/plain' }
+      headers: {
+        'Accept': 'text/plain'
+      }
     })
     .then(response => {
       response.text()
