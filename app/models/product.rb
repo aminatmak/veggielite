@@ -2,10 +2,11 @@ class Product < ApplicationRecord
   belongs_to :shop
   has_many :order_product_relationships
   has_one_attached :photo
+  has_many :orders
 
+  monetize :price_cents
   validates :name, presence: true
   validates :description, presence: true
-  monetize :price_cents
   validates :price, presence: true
   validates :quantity, presence: true
   validates :supplier_country, presence: true
