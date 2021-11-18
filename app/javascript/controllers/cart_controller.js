@@ -3,23 +3,31 @@ import { Controller } from "stimulus";
 export default class extends Controller {
   static targets = ['product', 'links'];
 
-  addProduct(event) {
+  async addProduct(event) {
     event.preventDefault();
+    event.stopPropagation();
     const url = this.productTarget.href;
-    fetch(url, {
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Accept': 'text/plain'
       }
     })
-    .then(response => {
-      response.text()
-    })
-    .then((data) => {
-      this.linksTarget.outerHTML = data;
-    })
+    const parsedResponse = await response.text();
+    this.linksTarget.outerHTML = parsedResponse;
   }
 
-  removeProduct() {
+  async removeProduct(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    const url = this.productTarget.href;
+    const response = await fetch(url, {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'text/plain'
+      }
+    })
+    const parsedResponse = await response.text();
+    this.linksTarget.outerHTML = parsedResponse;
   }
 }
