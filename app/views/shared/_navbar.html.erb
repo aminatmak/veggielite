@@ -13,7 +13,7 @@
         <%= link_to "Home", root_path, class:"btn btn-ghost " %>
       </li>
       <li class="nav-item">
-        <% if @cart %>
+        <% if current_user && @cart %>
           <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-placement="left" title="Shopping Cart">
             <i class="fas fa-shopping-cart">
               <span class="badge badge-light">
@@ -40,27 +40,27 @@
   </div>
 </div>
 
-<% if @cart %>
+<% if current_user && @cart %>
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Shopping Cart
   </button>
-<% end %>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <%= render 'products/product_infos', product: @product, cart: @cart %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Checkout</button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Here goes the product list
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <%= button_to 'Checkout', orders_path %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>

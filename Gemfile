@@ -33,6 +33,8 @@ gem 'devise'
 gem 'geocoder'
 gem 'pundit'
 gem 'money-rails'
+gem 'stripe'
+gem 'stripe_event'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
