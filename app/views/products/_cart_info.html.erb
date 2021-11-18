@@ -1,0 +1,7 @@
+<div data-controller="cart" data-cart-target="links">
+  <% if cart.include?(product_id) %>
+    <%= button_to 'Remove From Cart', remove_from_cart_product_path(product_id, format: 'text'), method: :delete, data: { action: 'click->cart#removeProduct' } %>
+  <% else %>
+    <%= link_to 'Add to Cart', add_to_cart_product_path(product_id, format: 'text'), method: :post, data: { action: 'click->cart#addProduct', cart_target: "product" } %>
+  <% end %>
+</div>

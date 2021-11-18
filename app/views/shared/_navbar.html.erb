@@ -3,15 +3,25 @@
     <%= image_tag "https://www.matthijs.nl/wp-content/uploads/2018/07/logo-Veggie-1024x844.png" %>
   <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <%= link_to "Home", root_path, class:"btn btn-ghost " %>
+      </li>
+      <li class="nav-item">
+        <% if @cart %>
+          <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-placement="left" title="Shopping Cart">
+            <i class="fas fa-shopping-cart">
+              <span class="badge badge-light">
+                <%= @cart.size %>
+              </span>
+            </i>
+          </button>
+        <% end %>
       </li>
       <%# <li class="nav-item">
         <%= link_to "Messages", "#", class: "nav-link" %>
@@ -29,4 +39,28 @@
     </ul>
   </div>
 </div>
-<div>
+
+<% if @cart %>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Shopping Cart
+  </button>
+<% end %>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= render 'products/product_infos', product: @product, cart: @cart %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,9 @@
 class ProductsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :index, :show ]
+  # skip_before_action :authenticate_user!, only: [:home, :index, :show, :add_to_cart, :remove_from_cart ]
+  before_action :initialize_session
+  before_action :increment_visit_count
+  before_action :load_cart
+  skip_before_action :verify_authenticity_token, if: :text_request?
 
   def index
     @products = Product.all
@@ -38,9 +42,41 @@ class ProductsController < ApplicationController
     end
   end
 
+  def add_to_cart
+    id = params[:id].to_i
+    session[:cart] << id unless session[:cart].include?(id)
+
+    respond_to do |format|
+      format.text { render partial: 'products/cart_info', locals: { product_id: id, cart: session[:cart] }, formats: [:html] }
+    end
+  end
+
+  def remove_from_cart
+    id = params[:id].to_i
+    session[:cart].delete(id)
+  end
+
   private
 
   def product_params
     params.require(:product).permit(:name, :description, :price, :category, :quantity)
+  end
+
+  def initialize_session
+    session[:visit_count] ||= 0 # Assign this value if nil.
+    session[:cart] ||= [] # Empty cart is an empty array.
+  end
+
+  def increment_visit_count
+    session[:visit_count] += 1
+    @visit_count = session[:visit_count]
+  end
+
+  def load_cart
+    @cart = session[:cart].present? ? Product.find(session[:cart]) : []
+  end
+
+  def text_request?
+    request.format.text?
   end
 end
