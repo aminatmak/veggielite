@@ -1,3 +1,7 @@
+.btn {
+  border-radius: 50px;
+}
+
 .btn-ghost {
   color: #4A4A4A;
   border: 1px solid #4A4A4A;
@@ -38,4 +42,14 @@
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
+}
+
+.btn-warning {
+  color: white;
+  font-size: 25px;
+}
+
+.btn-warning:hover {
+  color: wheat;
+  opacity: 1;
 }
