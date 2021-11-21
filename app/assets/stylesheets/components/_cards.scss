@@ -1,7 +1,7 @@
 .cards {
   display: grid;
   grid-template-columns: 2fr 2fr 2fr;
-  grid-gap: 16px;
+  grid-gap: var(--gap, 1rem);
 }
 
 .card-category {
@@ -15,9 +15,9 @@
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .card-tags {
@@ -27,7 +27,7 @@
   width: 80%;
   span {
     background: $blue;
-    font-size: .7em;
+    font-size: 0.7em;
     padding: 2px 4px;
     border-radius: 3px;
   }
@@ -40,7 +40,6 @@
   display: grid;
   grid-template-rows: 3fr;
 }
-
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -80,7 +79,7 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .card-trip > img {
@@ -98,13 +97,13 @@
 
 .card-trip p {
   font-size: 14px;
-  opacity: .7;
+  opacity: 0.7;
   margin: 0;
-  color: black
+  color: black;
 }
 
 .card-trip-comment {
-  background-color: #E1E5EA;
+  background-color: #e1e5ea;
   border-radius: 2px;
   color: white;
   font-size: 15px;
@@ -134,7 +133,7 @@
   border-radius: 8px;
   position: relative;
   overflow: hidden;
-  box-shadow: 2px 2px 8px 1px rgba(0, 0 , 0, 0.2);
+  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
   height: fit-content;
 
   img {
