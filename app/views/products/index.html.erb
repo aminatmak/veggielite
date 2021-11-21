@@ -86,7 +86,9 @@
             </li>
           </ul>
         </div>
-        <%= render 'list', products: @products %>
+
+        <%= render partial: 'list', locals: { products: @products, cart: @cart } %>
+
       </div>
     </div>
   </div>
