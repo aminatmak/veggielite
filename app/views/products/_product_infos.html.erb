@@ -11,7 +11,7 @@
                   <%= product.supplier_country %>
                   <%= product.calories %>
                   <%= product.macros %>
-                  <%= product.shop.name %>
+                  <%= link_to product.shop.name, shops_path %>
                 </div>
                 <div class="d-flex justify-content-center p-3">
                   <h2 class="card-trip-pricing mx-3">AED <%= product.price %></h2>
