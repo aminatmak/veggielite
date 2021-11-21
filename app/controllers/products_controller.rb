@@ -44,8 +44,9 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     id = params[:id].to_i
-    session[:cart] << id unless session[:cart].include?(id)
-
+    # session[:cart] << id unless session[:cart].include?(id)
+    session[:cart] << id
+    p session[:cart]
     respond_to do |format|
       format.text { render partial: 'products/cart_info', locals: { product_id: id, cart: session[:cart] }, formats: [:html] }
     end

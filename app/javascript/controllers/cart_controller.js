@@ -1,7 +1,7 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ['product', 'links'];
+  static targets = ['add', 'remove', 'links'];
 
   async addProduct(event) {
     event.preventDefault();
@@ -9,9 +9,10 @@ export default class extends Controller {
 
     // select the counter
     const counter = document.querySelector('#counter')
+    console.log(counter)
     // increase the value by 1
     counter.innerHTML = parseInt(counter.innerText) + 1
-    const url = this.productTarget.href;
+    const url = this.addTarget.href;
     const response = await fetch(url, {
       method: 'POST',
       headers: {
@@ -19,7 +20,13 @@ export default class extends Controller {
       }
     })
     const parsedResponse = await response.text();
-    this.linksTarget.outerHTML = parsedResponse;
+    console.log(parsedResponse)
+
+
+    // 1. increase the value of the field in between the two links by 1
+    //  TODO
+
+    // this.linksTarget.outerHTML = parsedResponse;
   }
 
   async removeProduct(event) {
@@ -30,7 +37,7 @@ export default class extends Controller {
     // decrease the value by 1
     const counter = document.querySelector('#counter')
     counter.innerHTML = parseInt(counter.innerText) - 1
-    const url = this.productTarget.href;
+    const url = this.removeTarget.href;
     const response = await fetch(url, {
       method: 'DELETE',
       headers: {
@@ -38,6 +45,6 @@ export default class extends Controller {
       }
     })
     const parsedResponse = await response.text();
-    this.linksTarget.outerHTML = parsedResponse;
+    // this.linksTarget.outerHTML = parsedResponse;
   }
 }

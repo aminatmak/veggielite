@@ -51,7 +51,7 @@
 
         <div id="collapse-<%= @order.id %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body cards">
-            <% @order.products.each do |product| %>
+            <% @basket.each do |product, quantity| %>
               <div class="card p-3 mb-3 flex-row">
                 <div class="row w-100">
                   <div class="col-4">
@@ -71,12 +71,12 @@
                     </div>
 
                     <div class="d-flex justify-content-between mt-2 b@order-bottom">
-                      <p><small>Quantity</small></p> <p><strong><%= product.quantity %></strong></p>
+                      <p><small>Quantity</small></p> <p><strong><%= quantity %></strong></p>
                     </div>
 
                     <div class="d-flex justify-content-between mt-3">
                       <p>Total</p>
-                      <p><strong><%= product.price * product.quantity %></strong></p>
+                      <p><strong><%= product.price * quantity %></strong></p>
                     </div>
                   </div>
                 </div>
@@ -91,7 +91,7 @@
   <div class="col-md-4">
     <!-- checkout -->
     <div class="bg-white b@order p-3 sticky-top">
-      <a href="#" class="btn btn-primary w-100">Delivery Locations</a>
+      <a href="#" class="btn btn-primary w-100">Checkout</a>
 
       <div class="d-flex justify-content-between mt-3">
         <p><strong>Dubai</strong> (1)</p>
