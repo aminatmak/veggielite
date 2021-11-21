@@ -556,7 +556,7 @@ product23 = Product.create(
   supplier_country: 'UK',
   calories: 285,
   shop: shop11,
-  macros: { protein: 21, carbs: 25, fat: 8,6 }
+  macros: { protein: 21, carbs: 25, fat: 8.6 }
 )
 file = URI.open('https://res.cloudinary.com/diepahdjf/image/upload/v1637435613/image_1200x_59fd0d52-231d-441e-a4c3-b1e899daa3af_1000x_yemie9.jpg')
 product23.photo.attach(io: file, filename: 'miso', content_type: 'image/jpg')
