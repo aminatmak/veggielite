@@ -6,6 +6,11 @@ export default class extends Controller {
   async addProduct(event) {
     event.preventDefault();
     event.stopPropagation();
+
+    // select the counter
+    const counter = document.querySelector('#counter')
+    // increase the value by 1
+    counter.innerHTML = parseInt(counter.innerText) + 1
     const url = this.productTarget.href;
     const response = await fetch(url, {
       method: 'POST',
@@ -20,6 +25,11 @@ export default class extends Controller {
   async removeProduct(event) {
     event.preventDefault();
     event.stopPropagation();
+
+    // select the counter
+    // decrease the value by 1
+    const counter = document.querySelector('#counter')
+    counter.innerHTML = parseInt(counter.innerText) - 1
     const url = this.productTarget.href;
     const response = await fetch(url, {
       method: 'DELETE',

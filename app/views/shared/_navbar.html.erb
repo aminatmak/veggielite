@@ -16,7 +16,7 @@
         <% if current_user && @cart %>
           <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-placement="left" title="Shopping Cart">
             <i class="fas fa-shopping-cart">
-              <span class="badge badge-light">
+              <span class="badge badge-light" id="counter">
                 <%= @cart.size %>
               </span>
             </i>
