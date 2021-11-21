@@ -196,10 +196,10 @@ p "-" * 20
 puts "Creating the products"
 
 product1 = Product.create(
-  name: 'Red Mill Pancake',
+  name: 'Red Mill Pancake Mix',
   description: 'Heat a lightly greased griddle or pan over medium-high heat. Mix all ingredients together in a bowl until just combined and then pour 1/4-cup portions onto the hot griddle or pan. Cook until bubbly, then flip and let cook until done, about 2-3 minutes per side. Serve immediately. Makes about 8 pancakes.',
   price_cents: 2350,
-  categories: 'Gluten free',
+  categories: ['Dairy free', 'Gluten free', 'Vegetarian', 'Vegan', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'USA',
   calories: 230,
@@ -215,7 +215,7 @@ product2 = Product.create(
   name: 'The Bridge Natural Bio Rice Drink',
   description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
   price: 13,
-  categories: 'Dairy free',
+  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Organic', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'Italy',
   calories: 47,
@@ -231,7 +231,7 @@ product3 = Product.create(
   name: 'Sugar Free Green Cubes',
   description: "It is 100 percent natural and is made from Stevia leaves. It's the perfect natural sweetener for beverages and desserts that you can share with your family including kids.",
   price: 13,
-  categories: 'Sugar free',
+  categories: ['Dairy free', 'Sugar free', 'Vegetarian', 'Vegan', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'India',
   calories: 2,
@@ -246,8 +246,8 @@ p product3
 product4 = Product.create(
   name: 'Sheese Vegan Mozzarella Slices',
   description: "Bute Islands's Mature Cheddar style Sheese is a 100% soya and dairy free cheese alternative made with coconut oil. It's free from lactose, gluten and produced using animal free process.",
-  price_cents: 24.99,
-  categories: 'Vegan',
+  price_cents: 2499,
+  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'Scotland',
   calories: 213,
@@ -263,7 +263,7 @@ product5 = Product.create(
   name: 'Mango',
   description: 'A good ol mango.',
   price_cents: 4500,
-  categories: 'Vegetarian',
+  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Organic', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'Australia',
   calories: 202,
@@ -279,7 +279,7 @@ product6 = Product.create(
   name: 'Fresh Express Salmon Burgers with Herbs',
   description: "Salmon Burgers with Herbs are produced by Fresh Express Foodstuff LLC, an established brand and industry leader in live, fresh and frozen seafood.",
   price: 20,
-  categories: 'Pescetarian',
+  categories: ['Dairy free', 'Sugar free', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'UAE',
   calories: 300,
@@ -295,7 +295,7 @@ product7 = Product.create(
   name: 'Organic Larder Organic Free Range Eggs',
   description: "The Organic Larder Organic Eggs are loaded with protein and vitamins for your daily requirement. These are free-range and are available in a crate of 10 eggs.",
   price_cents: 2230,
-  categories: 'Organic',
+  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Organic'],
   quantity: 1,
   supplier_country: 'Denmark',
   calories: 70,
@@ -311,7 +311,7 @@ product8 = Product.create(
   name: 'Nestle Go Free Honey Flakes',
   description: 'Delicious flakes of golden corn with a touch of honey.',
   price: 21,
-  categories: 'Gluten free',
+  categories: ['Dairy free', 'Gluten free', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'France',
   calories: 230,
@@ -327,7 +327,7 @@ product9 = Product.create(
   name: 'Symega Sugar Free Vanilla Powder',
   description: "Sugar free vanilla powder for all your sweet treats!",
   price_cents: 4800,
-  categories: 'Sugar free',
+  categories: ['Dairy free', 'Sugar free', 'Vegetarian', 'Vegan', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'UAE',
   calories: 2,
@@ -343,7 +343,7 @@ product10 = Product.create(
   name: "Nature's Path, Love Crunch, Premium Organic Granola, Dark Chocolate & Red Berries",
   description: 'Made with Organic Coconut & Cocoa',
   price: 16,
-  categories: 'Vegetarian',
+  categories: ['Dairy free', 'Gluten free', 'Vegetarian', 'Organic', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'Canada',
   calories: 130,
@@ -359,7 +359,7 @@ product11 = Product.create(
   name: 'Creamy Sheese Original',
   description: 'Our Original Creamy Sheese is a versatile dairy free cream cheese alternative. It can be used in exactly the same way as dairy cream cheese, sweet or savoury, except it’s certified vegan and kosher and made with coconut oil.',
   price: 25,
-  categories: 'Dairy free',
+  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'Scotland',
   calories: 286,
@@ -375,7 +375,7 @@ product12 = Product.create(
   name: "Ina Paarman's Kitchen Fish Spice Seasoning",
   description: 'This is an all-in-one rub with salt added. It is a blend of seasoned flour and breadcrumbs with lemon and herbs. The flour and breadcrumbs promote browning of the fish and prevent moisture loss.',
   price: 17,
-  categories: 'Pescetarian',
+  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Organic', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'India',
   calories: 10,
@@ -391,7 +391,7 @@ product13 = Product.create(
   name: 'Wilderness Poets Raw Pistachio Butter',
   description: 'Wilderness Poets Pistachio Butter is a delicious, creamy, naturally glowing green nut butter, made from fresh, Organic, Raw Pistachios.',
   price: 88,
-  categories: 'Gluten free',
+  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Organic', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'Jordan',
   calories: 156,
@@ -407,7 +407,7 @@ product14 = Product.create(
   name: 'Nectar Mini Peanut Butter Cups',
   description: 'Nectar is a unique homegrown concept created in 2013 in the heart of Abu Dhabi that offers functional and nourishing foods and drinks that go beyond basic nutrition. We use the best seasonal, local, and organic ingredients to carefully craft replenishing juices and smoothies, grain- and refined sugar-free snacks and treats, and handcrafted salads with superfood ingredient.',
   price: 30,
-  categories: 'Dairy free',
+  categories: ['Dairy free', 'Gluten free', 'Vegetarian', 'Vegan'],
   quantity: 1,
   supplier_country: 'UAE',
   calories: 47,
@@ -423,7 +423,7 @@ product15 = Product.create(
   name: 'Bites Of Delight Gluten-Free Vegan Unsweetened Cacao Powder',
   description: 'This product could be safely consumed by celiac disease patients and people with gluten intolerance as it contains less than 20 ppm, a standard established and enforced by the FDA. ',
   price: 28,
-  categories: 'Sugar free',
+  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan'],
   quantity: 1,
   supplier_country: 'Lebanon',
   calories: 60,
@@ -439,7 +439,7 @@ product16 = Product.create(
   name: 'Almonds',
   description: 'Almonds are a nutritious, portable, low-carbohydrate food that can be used in cooking or eaten raw as is. Almonds can be purchased, salted, unsalted, raw, or roasted. They can be turned into almond butter or ground as almond meal.',
   price_cents: 1874,
-  categories: 'Vegan',
+  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Organic'],
   quantity: 1,
   supplier_country: 'USA',
   calories: 47,
@@ -455,7 +455,7 @@ product17 = Product.create(
   name: 'Nectar Grain-Free Herb Crackers',
   description: 'Nectar Grain-Free Herb Crackers (45g)',
   price: 20,
-  categories: 'Vegetarian',
+  categories: ['Dairy free', 'Sugar free', 'Vegetarian', 'Vegan', 'Organic'],
   quantity: 1,
   supplier_country: 'UAE',
   calories: 47,
@@ -471,7 +471,7 @@ product18 = Product.create(
   name: 'NOW Foods Real Food Organic Monk Fruit 1 to 1 Sugar Replacement',
   description: "Discover and enjoy the enlightened sweetener! Monk fruit is nature's perfect substitute for sugar. You will be pleasantly surprised by how great it tastes, because it is deliciously sweet without any bitter aftertaste like that of artificial sweeteners. At zero calories, monk fruit is perfect for keto and other no-sugar diets.",
   price: 59,
-  categories: 'Pescetarian',
+  categories: ['Dairy free', 'Sugar free', 'Vegetarian', 'Vegan', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'USA',
   calories: 0,
@@ -487,7 +487,7 @@ product19 = Product.create(
   name: 'Ceylon Naturals Organic Coconut Cream',
   description: 'Ceylon Naturals Organic Coconut Cream is produced from the finest coconut meat from the best coconut harvests organically grown in Sri Lanka.',
   price_cents: 8950,
-  categories: 'Dairy free',
+  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Organic', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'Sri Lanka',
   calories: 141,
@@ -503,7 +503,7 @@ product20 = Product.create(
   name: 'FullGreen Riced Cauliflower With Tomato, Garlic, & Herbs',
   description: "Fullgreen's Rice Cauliflower with Tomato, Garlic, & Herbs is the ideal low-carb side to meals that call for a rich tomato flavor.",
   price: 19,
-  categories: ['Gluten free'],
+  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'Jordan',
   calories: 40,
@@ -582,7 +582,7 @@ p product24
 product25 = Product.create!(
   name: 'ORGANIC LARDER Pesto Vegan With Tofu',
   description: "Our Italian Family Has Been Making Pesto For Generations And This Is Our Organic Tomato Recipe Will Add Pizzazz To Your Italian Meals.
-We Have Been Making Pesto For Over 75 Years And Our Organic Pesto Is Made To Strict Organic Standards And Is Suitable For Vegetarians.",
+  We Have Been Making Pesto For Over 75 Years And Our Organic Pesto Is Made To Strict Organic Standards And Is Suitable For Vegetarians.",
   price: 44,
   categories: ['Gluten free', 'Vegetarian', 'Organic'],
   quantity: 1,
@@ -595,3 +595,163 @@ file = URI.open('https://res.cloudinary.com/diepahdjf/image/upload/v1637436354/2
 product25.photo.attach(io: file, filename: 'pesto', content_type: 'image/jpg')
 product25.save
 p product25
+
+product26 = Product.create(
+  name: 'ORGRAN No Egg Replacer Mix',
+  description: "Orgran No Egg contains no cholesterol, no lactose and no egg! It can be used in cakes, meringues or to make egg free mayonnaise.",
+  price_cents: 1999,
+  categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Sugar free', 'Pescetarian'],
+  quantity: 1,
+  supplier_country: 'USA',
+  calories: 50,
+  shop: shop13,
+  macros: { protein: 3, carbs: 13, fat: 10 }
+)
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637491703/vegl/product/720516010552_400x_mczkih.jpg')
+product26.photo.attach(io: file, filename: 'eggmix', content_type: 'image/jpg')
+product26.save
+p product26
+
+product27 = Product.create(
+  name: 'ENLIGHTENED Keto Butter Pecan Pint',
+  description: "Cream, Water, Pecans, Egg Yolks, Non-GMO Soluble Corn Fiber, Allulose, Natural Flavor, Erythritol, Milk Protein Concentrate, Vegetable Glycerin, Sunflower Oil, Tara Gum, Guar Gum, Butter, Monk Fruit Concentrate, Salt, Citric Acid",
+  price: 45,
+  categories: ['Vegetarian', 'Pescetarian'],
+  quantity: 1,
+  supplier_country: 'USA',
+  calories: 230,
+  shop: shop9,
+  macros: { protein: 4, carbs: 4, fat: 9 }
+)
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637491703/vegl/product/ENLIGHTENEDKetoButterPecanPint_473ml_600x_lr3vdn.jpg')
+product27.photo.attach(io: file, filename: 'icecream', content_type: 'image/jpg')
+product27.save
+p product27
+
+product28 = Product.create(
+  name: 'FRESH Eggplant',
+  description: "Eggplant, Solanum melongena, is a tropical, herbaceous, perennial plant, closely related to tomato, in the family Solanaceae which is grown for its edible fruit.",
+  price_cents: 299,
+  categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Gluten free', 'Pescetarian', 'Organic'],
+  quantity: 1,
+  supplier_country: 'Middle East',
+  calories: 25,
+  shop: shop6,
+  macros: { protein: 0.8, carbs: 4.8, fat: 0.1 }
+)
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637491703/vegl/product/or100000137_615fabd8-b02b-44a2-87c6-16c0d7092a40_600x_wzblca.jpg')
+product28.photo.attach(io: file, filename: 'eggplant', content_type: 'image/jpg')
+product28.save
+p product28
+
+product29 = Product.create(
+  name: 'FRESH Ginger',
+  description: "Ginger, Zingiber officinale, is an erect, herbaceous perennial plant in the family Zingiberaceae grew for its edible rhizome (underground stem) which is widely used as a spice.",
+  price_cents: 199,
+  categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Gluten free', 'Pescetarian', 'Organic'],
+  quantity: 1,
+  supplier_country: 'China',
+  calories: 5,
+  shop: shop11,
+  macros: { protein: 0.4, carbs: 1, fat: 0.3 }
+)
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637491703/vegl/product/or100000143_aa9770a9-c17f-45b0-87ef-f93fc5e50f74_600x_k7x7td.jpg')
+product29.photo.attach(io: file, filename: 'ginger', content_type: 'image/jpg')
+product29.save
+p product29
+
+product30 = Product.create(
+  name: 'FRESH Broccoli',
+  description: "Broccoli is an edible green plant in the cabbage family (family Brassicaceae, genus Brassica) whose large flowering head and stalk is eaten as a vegetable.",
+  price_cents: 799,
+  categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Gluten free', 'Pescetarian', 'Organic'],
+  quantity: 1,
+  supplier_country: 'India',
+  calories: 24,
+  shop: shop8,
+  macros: { protein: 0, carbs: 4.7, fat: 0 }
+)
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637491703/vegl/product/or100000130_600x_dtuhh3.jpg')
+product30.photo.attach(io: file, filename: 'brocolli', content_type: 'image/jpg')
+product30.save
+p product30
+
+product31 = Product.create(
+  name: 'FRESH Lemon',
+  description: "Lemon, Citrus lemon, is a small evergreen tree in the family Rutaceae grown for its edible fruit which, among other things, are used in a variety of foods and drinks.",
+  price: 3,
+  categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Gluten free', 'Pescetarian', 'Organic'],
+  quantity: 1,
+  supplier_country: 'India',
+  calories: 22,
+  shop: shop10,
+  macros: { protein: 1.1, carbs: 9.3, fat: 0.3 }
+)
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637491703/vegl/product/or100000148_37dbc876-ea5e-496b-a818-9e87f417a42c_600x_mosjin.jpg')
+product31.photo.attach(io: file, filename: 'lemon', content_type: 'image/jpg')
+product31.save
+p product31
+
+product32 = Product.create(
+  name: 'BEYOND MEAT Burger Patties',
+  description: "The Beyond Burger is the world’s first plant-based burger that looks, cooks, and satisfies like beef.",
+  price_cents: 3498,
+  categories: ['Vegan', 'Vegetarian', 'Gluten free', 'Pescetarian', 'Dairy free'],
+  quantity: 1,
+  supplier_country: 'Canada',
+  calories: 270,
+  shop: shop2,
+  macros: { protein: 19, carbs: 7, fat: 5 }
+)
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637491703/vegl/product/Top-view-Front-Burger-IND-Frozen_Def_600x_sr7dyx.jpg')
+product32.photo.attach(io: file, filename: 'patty', content_type: 'image/jpg')
+product32.save
+p product32
+
+product33 = Product.create(
+  name: 'FRESH Orange Navel',
+  description: "The navel orange actually grows a second “twin” fruit opposite its stem. The second fruit remains underdeveloped, but from the outside, it resembles a human navel—hence the name.",
+  price_cents: 299,
+  categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Gluten free', 'Pescetarian', 'Organic'],
+  quantity: 1,
+  supplier_country: 'Australia',
+  calories: 60,
+  shop: shop10,
+  macros: { protein: 1, carbs: 15.4, fat: 0 }
+)
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637491703/vegl/product/or100000148_37dbc876-ea5e-496b-a818-9e87f417a42c_600x_mosjin.jpg')
+product33.photo.attach(io: file, filename: 'orange', content_type: 'image/jpg')
+product33.save
+p product33
+
+product34 = Product.create(
+  name: 'FRESH Green Chili',
+  description: "Green chilis are immature chili peppers, most often Pasilla, Anaheim or Poblano peppers that have been harvested before fully ripening.",
+  price_cents: 199,
+  categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Gluten free', 'Pescetarian', 'Organic'],
+  quantity: 1,
+  supplier_country: 'India',
+  calories: 30,
+  shop: shop10,
+  macros: { protein: 0.9, carbs: 3.3, fat: 0.9 }
+)
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637491703/vegl/product/or100000145_815c0d53-61b5-43e4-981a-e644749f9879_600x_irynqs.jpg')
+product34.photo.attach(io: file, filename: 'chilli', content_type: 'image/jpg')
+product34.save
+p product34
+
+product35 = Product.create(
+  name: 'VIOLIFE Mozarella Flavour Grated Cheese',
+  description: "These grated cheese shreds are great to have in the fridge! Make a creamy risotto, top your baked potato or pasta, grilled cheese sandwich…the options are endless!",
+  price: 23,
+  categories: ['Vegan', 'Gluten free', 'Dairy free'],
+  quantity: 1,
+  supplier_country: 'USA',
+  calories: 290,
+  shop: shop5,
+  macros: { protein: 0, carbs: 21, fat: 24 }
+)
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637491703/vegl/product/mozzarella_wnxwlk.jpg')
+product35.photo.attach(io: file, filename: 'mozzarella', content_type: 'image/jpg')
+product35.save
+p product35
