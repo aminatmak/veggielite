@@ -7,6 +7,15 @@ export default class extends Controller {
     event.preventDefault();
     event.stopPropagation();
 
+    const increaseNumber = document.querySelector('number').value,
+    const increaseNumber = $(this).parents('.cart').find('.quantity').val();
+    const value = parseInt(increaseNumber, 10);
+    value = isNaN(value) ? 0 : value;
+    if (value < 10) {
+      value++;
+      $(this).parents('.cart').find('.quantity').val(value);
+    }
+
     // select the counter
     const counter = document.querySelector('#counter')
     console.log(counter)
@@ -33,6 +42,14 @@ export default class extends Controller {
     event.preventDefault();
     event.stopPropagation();
 
+    const decrementNumber = document.querySelector('number').value,
+    const decrementNumber = $(this).parents('.cart').find('.quantity').val();
+    const value = parseInt(decrementNumber, 10);
+    value = isNaN(value) ? 0 : value;
+    if (value > 1) {
+      value--;
+      $(this).parents('.cart').find('.quantity').val(value);
+    }
     // select the counter
     // decrease the value by 1
     const counter = document.querySelector('#counter')

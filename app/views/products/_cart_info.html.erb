@@ -1,6 +1,6 @@
 
 <div data-controller="cart" data-cart-target="links">
-  <div class="d-flex justify-content-between">
+  <div class="quantity d-flex justify-content-between">
     <%# if cart.include?(product_id) %>
       <%= link_to '-', remove_from_cart_product_path(product_id), method: :delete, data: { action: 'click->cart#removeProduct', cart_target: "remove" } %>
     <%# else %>

@@ -35,6 +35,5 @@ class OrdersController < ApplicationController
     @basket =   @order.products
                       .group_by { |product| product }
                       .transform_values{ |values| values.count }
-
   end
 end
