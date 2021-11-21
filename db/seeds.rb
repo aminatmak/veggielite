@@ -579,7 +579,7 @@ product24.photo.attach(io: file, filename: 'tofu', content_type: 'image/jpg')
 product24.save
 p product24
 
-product25 = Product.create(
+product25 = Product.create!(
   name: 'ORGANIC LARDER Pesto Vegan With Tofu',
   description: "Our Italian Family Has Been Making Pesto For Generations And This Is Our Organic Tomato Recipe Will Add Pizzazz To Your Italian Meals.
   We Have Been Making Pesto For Over 75 Years And Our Organic Pesto Is Made To Strict Organic Standards And Is Suitable For Vegetarians.",

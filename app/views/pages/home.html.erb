@@ -1,31 +1,124 @@
 <div id="carouselExampleSlidesOnly" class="carousel slide banner-home" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1484980859177-5ac1249fda6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1829&q=80);" class="d-block w-100" alt="First slide">
-        <h1 class="d-flex justify-content-center align-items-center">VEGGIELITE</h1>
-        <p class="d-flex justify-content-center align-items-center">Convenient and seamless grocery shopping experience!</p>
-          <div class="d-flex justify-content-center align-items-center">
-            <h2> <%= link_to "SHOP NOW", products_path, class: 'btn btn-warning btn-lg' %> </h2>
+      <div class="banner-home home-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1484980859177-5ac1249fda6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1829&q=80);" class="d-block w-100" alt="First slide">
+        <h1 class="banner-header">Easy shopping for all your dietary needs</h1>
+          <div>
+            <%= link_to "SHOP NOW", products_path, class: 'btn-cta' %>
+          </div>
+      </div>
+    </div>
+ <div class="carousel-item">
+      <div class="banner-home home-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1364&q=80);" class="d-block w-100" alt="Second slide">
+        <h1 class="banner-header">Easy shopping for all your dietary needs</h1>
+          <div>
+            <%= link_to "SHOP NOW", products_path, class: 'btn-cta' %>
           </div>
       </div>
     </div>
     <div class="carousel-item">
-      <div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1364&q=80);" class="d-block w-100" alt="Second slide">
-        <h1 class="d-flex justify-content-center align-items-center">VEGGIELITE</h1>
-        <p class="d-flex justify-content-center align-items-center">Convenient and seamless grocery shopping experience!</p>
-          <div class="d-flex justify-content-center align-items-center">
-            <h2> <%= link_to "SHOP NOW", products_path, class: 'btn btn-warning btn-lg' %> </h2>
+      <div class="banner-home home-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1610415946035-bad6fc9f5b8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3687&q=80);" class="d-block w-100" alt="Third slide">
+        <h1 class="banner-header">Easy shopping for all your dietary needs</h1>
+          <div>
+            <%= link_to "SHOP NOW", products_path, class: 'btn-cta' %>
           </div>
       </div>
-    </div>
-    <div class="carousel-item">
-      <div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1610415946035-bad6fc9f5b8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3687&q=80);" class="d-block w-100" alt="Third slide">
-        <h1 class="d-flex justify-content-center align-items-center">VEGGIELITE</h1>
-        <p class="d-flex justify-content-center align-items-center">Convenient and seamless grocery shopping experience!</p>
-          <div class="d-flex justify-content-center align-items-center">
-            <h2> <%= link_to "SHOP NOW", products_path, class: 'btn btn-warning btn-lg' %> </h2>
-          </div>
-      </div>
-    </div>
+    </div> 
+
+    
   </div>
 </div>
+
+<section>
+  <div class="home-container">
+    <h2 class="product-section-header">Hand-picked for you</h2>
+    <div class="cards">
+      <% @products[0..2].each do |product| %>
+                <div class="card-trip position relative">
+                  <%= cl_image_tag product.photo.key %>
+                  <div class="card-trip-infos">
+                    <div>
+                      <%= link_to product.name, product, class: 'nav-link' %>
+                      <p> <strong>Supplier country:</strong> <%= product.supplier_country %> </p>
+                      <p> <strong> Calories:</strong> <%= product.calories %> </p>
+                      <p> <strong>Protein:</strong> <%= product.macros['protein'] %> </p>
+                      <p> <strong>Fat:</strong> <%= product.macros['fat'] %> </p>
+                      <p> <strong>Carbs:</strong> <%= product.macros['carbs'] %> </p>
+                      <p> <strong>Shop:</strong> <%= product.shop.name %> </p>
+                    </div>
+                    <div class="d-flex justify-content-center p-3">
+                      <h2 class="card-trip-pricing mx-3"> <%= humanized_money_with_symbol(product.price) %> </h2>
+                        <%# render partial: 'cart_info', locals: { product_id: product.id, cart: @cart }%>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+    
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class=" about-us">
+    <div class="home-container">
+      <h2 style="font-size: 2.25rem;">About Us</h2>
+      <p class="about-us-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod, augue ut sollicitudin mollis, turpis urna luctus massa, ac dapibus orci dolor at sem. Vestibulum iaculis sollicitudin augue, ut mattis ipsum. Duis vitae sagittis nisi.</p>
+    </div>
+  </div>
+</section>
+
+<section class="home-container text-center">
+  <h2 style="font-size: 2.25rem; padding-block: 2.75rem;">Testimonials</h2>
+  <div class="cards" style="--gap: 2rem;">
+    <div class="testimonial">
+      <div class="d-flex">
+        <div>
+          <%= image_tag "1.png", class: "avatar" %>
+        </div>
+        <div>
+          <h3>Amanda P<h3>
+          <%= image_tag "stars.png", class: "stars" %> 
+        </div>
+      </div>
+      <h2 class=".font-nunito">Amazing Service!</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euism </p>
+    </div>
+
+    <div class="testimonial">
+      <div class="d-flex">
+        <div>
+          <%= image_tag "2.png", class: "avatar" %>
+        </div>
+        <div>
+          <h3>Margaret J.<h3>
+          <%= image_tag "stars.png", class: "stars" %> 
+        </div>
+      </div>
+      <h2 class=".font-nunito">Easy to Use</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euism </p>
+    </div>
+
+    <div class="testimonial">
+      <div class="d-flex">
+        <div>
+          <%= image_tag "3.png", class: "avatar" %>
+        </div>
+        <div>
+          <h3>Henry M.<h3>
+          <%= image_tag "stars.png", class: "stars" %> 
+        </div>
+      </div>
+      <h2 class=".font-nunito">Quick Delivery</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euism </p>
+    </div>
+  </div>
+</section>
+
+<section class="cta text-left">
+  <div class="home-container">
+    <h2>Try the best delivery service ever</h2>
+    <p class="text-gray" style="margin-block: 2.75rem ;">We deliver your produce straight to your doorstep</p>
+    <%= link_to "SHOP NOW", products_path, class: 'btn-cta' %>
+  </div>
+</section>

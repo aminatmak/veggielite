@@ -5,7 +5,9 @@
         <div class="cards">
           <% products.each do |product| %>
             <div class="card-trip position relative">
-              <%= cl_image_tag product.photo.key %>
+              <% if product.photo.attached? %>
+                <%= cl_image_tag product.photo.key %>
+              <% end %>
               <div class="card-trip-infos">
                 <div>
                   <%= link_to product.name, product, class: 'nav-link' %>
