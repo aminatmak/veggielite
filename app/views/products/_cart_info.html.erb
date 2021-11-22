@@ -1,12 +1,14 @@
 
 <div data-controller="cart" data-cart-target="links" data-basket="<%= session[:cart].to_json %>" data-product=" <%= product_id %> ">
+
   <div class="quantity d-flex">
-    <%# if cart.include?(product_id) %>
+
      <div class="minus"> <%= link_to '-', remove_from_cart_product_path(product_id), method: :delete, data: { action: 'click->cart#removeProduct', cart_target: "remove", index: "product-#{product_id}" }, class: 'cart-minus' %> </div>
-    <%# else %>
+
       <span class="cart-number" id="product-<%= product_id %>">0</span>
+
+
       <div class="plus"><%= link_to '+', add_to_cart_product_path(product_id), method: :post, data: { action: 'click->cart#addProduct', cart_target: "add", index: "product-#{product_id}" }, class: 'cart-plus' %> </div>
-    <%# end %>
 
   </div>
 </div>
