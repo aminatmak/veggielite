@@ -151,3 +151,8 @@ select {
   clip-path: polygon(0 0, 100% 31%, 100% 100%, 0% 100%);
   padding-block: 10rem;
 }
+
+.banner-divider {
+  height: 40vh;
+  background-color: var(--clr-green-300);
+}
