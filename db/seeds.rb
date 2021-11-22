@@ -719,7 +719,7 @@ product33 = Product.create(
   shop: shop10,
   macros: { protein: 1, carbs: 15.4, fat: 0 }
 )
-file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637491703/vegl/product/or100000148_37dbc876-ea5e-496b-a818-9e87f417a42c_600x_mosjin.jpg')
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637558859/vegl/product/71069_main_syzrk4.jpg')
 product33.photo.attach(io: file, filename: 'orange', content_type: 'image/jpg')
 product33.save
 p product33
