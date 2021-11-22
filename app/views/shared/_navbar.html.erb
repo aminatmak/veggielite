@@ -1,13 +1,60 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "root", class: "navbar-brand" do %>
-    <%= image_tag "veggielite_logo.png" %>
-  <% end %>
+<div class="bg-white">
+  <div class="nav home-container">
+    
+    <%= link_to "root", class: "logo" do %>
+      <%= image_tag "veggielite_logo.png" %>
+    <% end %>
 
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <ul class="nav-buttons">
+      <li><%= link_to "Home", root_path, class:"btn-home" %></li>
+      <li><% if current_user && @cart %>
+          <%= button_to orders_path do %>
+            <div class="btn-checkout" data-bs-toggle="tooltip" data-placement="left" title="Checkout">
+              <i class="fas fa-shopping-cart">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning" id="counter">
+                  <%= @cart.size %>
+                </span>
+              </i>
+            </div>
+          <% end %>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Here goes the product list
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <%= button_to 'Checkout', orders_path %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %></li>
+      <li><%= link_to "Log In", new_user_session_path, class: 'btn-login'  %></li>
+
+
+    </ul>
+
+  </div>
+
+</div>
+
+  <%
+=begin%>
+ <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> 
+<%
+=end%>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <%
+=begin%>
+ <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <%= link_to "Home", root_path, class:"btn-green " %>
@@ -45,7 +92,9 @@
           </div>
         <% end %>
       </li>
-      <li class="nav-item dropdown">
+      <%
+=begin%>
+ <li class="nav-item dropdown">
         <i class="fas fa-user-circle"></i>
         <%= link_to class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
         <% end %>
@@ -54,10 +103,18 @@
           <%= link_to "Log In", new_user_session_path, class: "dropdown-item" %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
-      </li>
-    </ul>
+      </li> 
+<%
+=end%>
+    <%
+=begin%>
+ </ul>
   </div>
-</div>
+</div> 
+<%
+=end%> 
+<%
+# =end%>
 
 <%# <% if current_user && @cart %>
   <!-- Button trigger modal -->
