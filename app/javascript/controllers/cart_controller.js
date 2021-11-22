@@ -8,6 +8,7 @@ export default class extends Controller {
     // 1. get the basket array
     const basket = document.querySelector('basket')
     // 2. how many times do we find the id in the array -> [ [id, occurence],[4,2], [7,1] ]
+
     // 3. iterate through the array
     // 4. for each id -> target the product-id
     // 5. update the innertext of target with occurence
