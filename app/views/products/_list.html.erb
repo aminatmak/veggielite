@@ -1,15 +1,16 @@
 
-<div data-search-products-target="list">
-  <p class="h3">
-    <% if params[:query].blank? %>
-      <%= pluralize products.count, 'product' %> available
-    <% else %>
-      <%= pluralize products.count, 'result' %> for <code><%= params[:query] %></code>
-    <% end %>
-  </p>
-  <div class="products">
-    <%# <% products.each do |product| %>
-      <%= render partial: 'product_infos', locals: { products: products, cart: @cart } %>
-    <%# <% end %>
+
+  <div data-search-products-target="list" class="home-container">
+    <p class="products-count-indicator">
+      <% if params[:query].blank? %>
+        <%= pluralize products.count, 'product' %> available
+      <% else %>
+        <%= pluralize products.count, 'result' %> for <code><%= params[:query] %></code>
+      <% end %>
+    </p>
+    <div class="products">
+      <%# <% products.each do |product| %>
+        <%= render partial: 'product_infos', locals: { products: products, cart: @cart } %>
+      <%# <% end %>
+    </div>
   </div>
-</div>

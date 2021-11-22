@@ -20,70 +20,70 @@
                             } %>
         <% end %>
         <div class="navigation menu_items d-flex justify-content-center">
-          <ul class="list-inline">
+          <ul class="list-inline categories">
             <li class="gluten-free list-inline-item">
-              <div>
+              <div class="product-categories">
                 <%= link_to products_path, class:'nav-link' do %>
                   <i class="fas fa-utensils"></i>
                 <% end %>
               </div>
-              All Products
+              <span class="categories-text">All Products</span>
             </li>
             <li class="gluten-free list-inline-item">
-              <div>
+              <div class="product-categories">
                 <%= link_to products_path(category: "Gluten free"), class:'nav-link' do %>
                   <i class="fas fa-cookie-bite"></i>
                 <% end %>
               </div>
-              Gluten free
+              <span class="categories-text">Gluten free</span>
             </li>
             <li class="sugar-free list-inline-item">
-              <div>
+              <div class="product-categories">
                 <%= link_to products_path(category: "Sugar free"),class:'nav-link' do %>
                 <i class="fas fa-birthday-cake"></i>
                 <% end %>
               </div>
-              Sugar free
+              <span class="categories-text">Sugar free<span>
             </li>
             <li class="dairy-free list-inline-item">
-              <div>
+              <div class="product-categories">
                 <%= link_to products_path(category: "Dairy free"),class:'nav-link' do %>
                 <i class="fas fa-ice-cream"></i>
                 <% end %>
               </div>
-              Dairy free
+              <span class="categories-text">Dairy free</span>
             </li>
             <li class="vegan list-inline-item">
-              <div>
+              <div class="product-categories">
                 <%= link_to products_path(category: "Vegan"),class:'nav-link' do %>
                 <i class="fas fa-seedling"></i>
                 <% end %>
               </div>
-              Vegan
+              <span class="categories-text">Vegan</span>
             </li>
             <li class="vegetarian list-inline-item">
-              <div>
+              <div class="product-categories">
                 <%= link_to products_path(category: "Vegetarian"),class:'nav-link' do %>
                 <i class="fas fa-carrot"></i>
                 <% end %>
               </div>
-              Vegetarian
+              <span class="categories-text">Vegetarian</span>
             </li>
             <li class="pescetarian list-inline-item">
-              <div>
+              <div class="product-categories">
                 <%= link_to products_path(category: "Pescetarian"),class:'nav-link' do %>
                 <i class="fas fa-fish"></i>
                 <% end %>
               </div>
-              Pescetarian
+              <span class="categories-text">Pescetarian<span>
             </li>
             <li class="organic list-inline-item">
-              <div>
+              <div class="product-categories">
                 <%= link_to products_path(category: "Organic"),class:'nav-link' do %>
                 <i class="fab fa-pagelines"></i>
                 <% end %>
               </div>
-              Organic
+              <span class="categories-text">Organic</span>
             </li>
           </ul>
         </div>
