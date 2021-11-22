@@ -32,8 +32,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    @basket =   @order.products
-                      .group_by { |product| product }
-                      .transform_values{ |values| values.count }
+    @basket = @order.products
+                    .group_by { |product| product }
+                    .transform_values{ |values| values.count }
   end
 end
