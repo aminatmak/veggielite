@@ -4,30 +4,28 @@
       <div class="mproduct-card">
         <div class="cards">
           <% products.each do |product| %>
-            <div class="card-trip position relative">
-              <% if product.photo.attached? %>
-                <%= cl_image_tag product.photo.key %>
-              <% end %>
-              <div class="card-trip-infos">
-                <div>
-                  <%= link_to product.name, product, class: 'nav-link' %>
-                  <p> <strong>Supplier country:</strong> <%= product.supplier_country %> </p>
-                  <p> <strong> Calories:</strong> <%= product.calories %> </p>
+            <div class="card">
+          <div class="card-trip position relative">
+            <div class="card-img"><%= cl_image_tag product.photo.key %></div>
+            <div class="card-infos d-flex">
+              <div style="width: 60%;">
+                <%= link_to product.name, product, class: 'product-name' %>
+                
+                <p class="products-calories"> <strong>Calories:</strong> <%= product.calories %> </p>
+                <div style="border-left: 0.2rem solid var(--clr-green-300); padding-left: 1rem;">
                   <p> <strong>Protein:</strong> <%= product.macros['protein'] %> </p>
                   <p> <strong>Fat:</strong> <%= product.macros['fat'] %> </p>
                   <p> <strong>Carbs:</strong> <%= product.macros['carbs'] %> </p>
-                  <p> <strong>Shop:</strong> <%= product.shop.name %> </p>
-                </div>
-                <div class="quantity d-flex justify-content-center p-3">
-                  <div class="">
-                    <h2 class="card-trip-pricing mx-3"> <%= humanized_money_with_symbol(product.price) %> </h2>
-                  </div>
-                  <div id='number'>
-                    <%= render partial: 'cart_info', locals: { product_id: product.id, cart: cart }%>
-                  </div>
                 </div>
               </div>
+              <div style="width: 40%; text-align: right;">
+                <h2 class="product-price"> <span style="  border-bottom: 0.2rem solid var(--clr-green-300);"><%= humanized_money_with_symbol(product.price) %> </span> </h2>
+                  <%= render partial: 'cart_info', locals: { product_id: product.id, cart: @cart }%>
+              </div>
             </div>
+          </div>
+        
+        </div>
           <% end %>
         </div>
       </div>

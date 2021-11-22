@@ -32,30 +32,32 @@
   </div>
 </section>
 
-
-<section>
+<section class="products-section">
   <div class="home-container">
     <h2 class="product-section-header">Hand-picked for you</h2>
     <div class="cards">
+      
       <% @products[0..2].each do |product| %>
-                <div class="card-trip position relative">
-                  <%= cl_image_tag product.photo.key %>
-                  <div class="card-trip-infos">
-                    <div>
-                      <%= link_to product.name, product, class: 'nav-link' %>
-                      <p> <strong>Supplier country:</strong> <%= product.supplier_country %> </p>
-                      <p> <strong> Calories:</strong> <%= product.calories %> </p>
-                      <p> <strong>Protein:</strong> <%= product.macros['protein'] %> </p>
-                      <p> <strong>Fat:</strong> <%= product.macros['fat'] %> </p>
-                      <p> <strong>Carbs:</strong> <%= product.macros['carbs'] %> </p>
-                      <p> <strong>Shop:</strong> <%= product.shop.name %> </p>
-                    </div>
-                    <div class="d-flex justify-content-center p-3">
-                      <h2 class="card-trip-pricing mx-3"> <%= humanized_money_with_symbol(product.price) %> </h2>
-                        <%# render partial: 'cart_info', locals: { product_id: product.id, cart: @cart }%>
-                    </div>
-                  </div>
-                </div>
+        <div class="card">
+          <div class="card-trip position relative">
+            <div class="card-img"><%= cl_image_tag product.photo.key %></div>
+            <div class="card-infos d-flex">
+              <div style="width: 50%;">
+                <%= link_to product.name, product, class: 'product-name' %>
+                
+                <p class="products-calories"> <strong>Calories:</strong> <%= product.calories %> </p>
+                <p> <strong>Protein:</strong> <%= product.macros['protein'] %> </p>
+                <p> <strong>Fat:</strong> <%= product.macros['fat'] %> </p>
+                <p> <strong>Carbs:</strong> <%= product.macros['carbs'] %> </p>
+              </div>
+              <div style="width: 50%; text-align: right;">
+                <h2 class="product-price"> <span style="  border-bottom: 0.2rem solid var(--clr-green-300);"><%= humanized_money_with_symbol(product.price) %> </span> </h2>
+                  <%# render partial: 'cart_info', locals: { product_id: product.id, cart: @cart }%>
+              </div>
+            </div>
+          </div>
+        
+        </div>
               <% end %>
     
     </div>
