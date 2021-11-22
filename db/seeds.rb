@@ -510,7 +510,7 @@ product20 = Product.create(
   shop: shop5,
   macros: { protein: 1.5, carbs: 6, fat: 1 }
 )
-file = URI.open('https://res.cloudinary.com/diepahdjf/image/upload/v1637434613/SKINNYGENIEBreadLoafBrownMultigrain400g_Gluten-free_Vegan_1000x_fwybxt.jpg')
+file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142921/vegl/product/1.Riced_UK_Tomato_Front_1_2400x2400-600x600-removebg-preview_1_540x_dq4gvj.png')
 product20.photo.attach(io: file, filename: 'riced', content_type: 'image/jpg')
 product20.save
 p product20
@@ -526,7 +526,7 @@ product21 = Product.create(
   shop: shop13,
   macros: { protein: 26, carbs: 123, fat: 15 }
 )
-file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637142921/vegl/product/1.Riced_UK_Tomato_Front_1_2400x2400-600x600-removebg-preview_1_540x_dq4gvj.png')
+file = URI.open('https://res.cloudinary.com/diepahdjf/image/upload/v1637434613/SKINNYGENIEBreadLoafBrownMultigrain400g_Gluten-free_Vegan_1000x_fwybxt.jpg')
 product21.photo.attach(io: file, filename: 'bread', content_type: 'image/jpg')
 product21.save
 p product21
