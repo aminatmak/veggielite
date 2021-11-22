@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :payments, only: :new
   end
   resources :shops, only: [:index, :show]
-  resources :orders, only: [:show, :destroy]
+  resources :orders, only: [:show, :destroy, :update]
   get '/my_orders', to: 'my_orders#my_orders'
   mount StripeEvent::Engine, at: '/stripe-webhooks'
 end

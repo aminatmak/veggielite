@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
 
     if order.persisted?
       session[:cart] = []
-      order.update(checkout_session_id: session.id, state: 'completed')
+      order.update(checkout_session_id: session.id)
       redirect_to order_path(order)
     end
   end
@@ -35,5 +35,12 @@ class OrdersController < ApplicationController
     @basket = @order.products
                     .group_by { |product| product }
                     .transform_values{ |values| values.count }
+  end
+
+  def update
+    @order = Order.find(params[:id])
+    @order.update(state: 'completed')
+
+    session[:cart] = []
   end
 end

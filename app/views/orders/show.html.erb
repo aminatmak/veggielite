@@ -4,11 +4,11 @@
     <div class="banner-checkout--content home-container">
         <h3 class="banner-checkout--header">Your Dashboard</h3>
 
-        
+
         <%
 =begin%>
  <p>Address: Internet city, Dubai </p>
-        <p>Delivery Date: Oct 4 2021 </p> 
+        <p>Delivery Date: Oct 4 2021 </p>
 <%
 =end%>
       <%#= @order.shop.name %>
@@ -25,7 +25,7 @@
 
 <!-- restaurant menu / checkout-->
 <div class="container py-3">
-  
+
   <div class="row">
     <div class="col-md-8">
 
@@ -47,7 +47,7 @@
 =begin%>
  <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-<%= @order.id %>" aria-expanded="true" aria-controls="collapse-<%= @order.id %>">
               <p class=""><strong><%= @order.user.first_name %> <%= @order.user.last_name %> - <%= @order.products.count %> - <%= @order.products.map(&:price).sum %>€</strong></p>
-            </button> 
+            </button>
 <%
 =end%>
         </div>
@@ -91,14 +91,18 @@
     </div>
   </div>
 
-  <div class="col-md-4 checkout-right">
+  <div class="col-md-4 checkout-right"
+       data-controller='payment'
+       data-order-checkout=<%= @order.checkout_session_id  %>
+       data-order-id=<%= @order.id %>
+       data-key='<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>'>
     <!-- checkout -->
     <div class="banner-checkout--details">
           <p><span> Address:</span> Internet city, Dubai </p>
           <p><span> Delivery Date:</span> Oct 4 2021 </p>
         </div>
     <div class="sticky-top checkout-box">
-      
+
 
       <div class="d-flex justify-content-between mt-3">
         <p><strong>Dubai</strong> (1)</p>
@@ -119,8 +123,30 @@
         <p><strong>Total</strong></p>
         <p><strong>£23.80</strong></p>
       </div>
+      <%# <%= link_to "Chekout", orders_order_id_payment_new_path, class: 'checkout-button' %> %>
+      <% if @order.state == "completed" %>
+        <div class="checkout-button">Thank you for purchasing with us</div>
+      <% else %>
+        <button id="pay" data-action='click->payment#pay' class="checkout-button">Pay Now</button>
+      <% end %>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+          // const paymentButton = document.getElementById('pay');
+          // paymentButton.addEventListener('click', () => {
+          //   const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          //   stripe.redirectToCheckout({
+          //     sessionId: '<%= @order.checkout_session_id %>'
+          //   });
 
-      <a href="#" class="checkout-button">Checkout</a>
+          //   fetch("/orders/<%= @order.id %>", {
+          //     method: 'PATCH',
+          //     headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() }
+          //   })
+
+
+
+          });
+        </script>
     </div>
     <!-- /checkout -->
   </div>

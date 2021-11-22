@@ -1,28 +1,17 @@
 <div class="container">
   <div class="row py-4">
-    <% products.order.each do |order| %>
+    <% @order.products.each do |product| %>
       <div class="col">
         <h1>Checkout summary</h1>
-        <p>Purchase of <strong><%= order.product.name %></strong> for
-          <strong><%= humanized_money_with_symbol order.product.price %></strong>
+        <p>Purchase of <strong><%= product.name %></strong> for
+          <strong><%= humanized_money_with_symbol product.price %></strong>
           <%= render partial: 'cart_info', locals: { product_id: product.id, cart: @cart } %>
         </p>
-        <button id="pay" class="btn btn-cta">Pay Now</button>
 
-        <script src="https://js.stripe.com/v3/"></script>
-        <script>
-          const paymentButton = document.getElementById('pay');
-          paymentButton.addEventListener('click', () => {
-            const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-            stripe.redirectToCheckout({
-              sessionId: '<%= @order.checkout_session_id %>'
-            });
-          });
-        </script> -->
       </div>
 
 
     <% end %>
-    <div class="col-md-3"><%= cl_image_tag @order.products.first.photo.key, width: '100%' %></div>
+
   </div>
 </div>
