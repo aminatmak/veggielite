@@ -26,14 +26,12 @@ export default class extends Controller {
       }
     })
   }
-
-
-
   connect() {
     // 1. iterate through the links
     // 2. access the value in cart-number
     // 3. if == 0 -> disable cart-minus
     this.buttonDisable()
+    this.disableBusket()
   }
 
   async addProduct(event) {
@@ -57,8 +55,8 @@ export default class extends Controller {
     // increase the value by 1
     counter.innerText = parseInt(counter.innerText) + 1
 
-
     this.buttonDisable()
+    this.disableBusket()
 
     const url = this.addTarget.href;
     const response = await fetch(url, {
@@ -69,7 +67,6 @@ export default class extends Controller {
     })
     const parsedResponse = await response.text();
     // console.log(parsedResponse)
-
   }
 
   async removeProduct(event) {
@@ -88,6 +85,7 @@ export default class extends Controller {
     counter.innerText = parseInt(counter.innerText) - 1
 
     this.buttonDisable()
+    this.disableBusket()
 
     const url = this.removeTarget.href;
     const response = await fetch(url, {
@@ -100,7 +98,6 @@ export default class extends Controller {
     // this.linksTarget.outerHTML = parsedResponse;
   }
 
-
   buttonDisable = () => {
     this.linksTargets.forEach(link => {
       const cartNumber = link.querySelector('.cart-number')
@@ -111,6 +108,17 @@ export default class extends Controller {
       } else {
         link.querySelector('.minus').style.border = '1px solid var(--clr-green-300)'
         link.querySelector('.cart-minus').classList.remove('d-none')
+      }
+    })
+  }
+
+  disableBusket = () => {
+    this.linksTargets.forEach(link => {
+      const busketButton = link.querySelector('.nav-buttons')
+      if (parseInt(busketButton.innerText) === 0) {
+        link.querySelector('.btn-checkout').prop('disabled', true);
+      } else {
+        link.querySelector('.btn-checkout').prop('disabled', false);
       }
     })
   }
