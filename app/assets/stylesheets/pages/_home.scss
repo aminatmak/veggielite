@@ -3,7 +3,7 @@
   --ff-roboto: 'Roboto', sans-serif;
   --ff-nunito: 'Nunito', sans-serif;
 
-  --clr-green-300: #5aa469;
+  --clr-green-300: #5ba469;
   --clr-green: #388e3c;
   --clr-yellow: #f0cd55;
 }
@@ -87,6 +87,10 @@ select {
 
 // Utility
 
+.text-green {
+  color: var(--clr-green-300);
+}
+
 .text-gray {
   color: #f8f8f8;
 }
@@ -140,7 +144,13 @@ select {
 }
 
 .testimonial h2 {
+  font-size: 1.75rem;
   margin-block: 1.5rem;
+}
+
+.testimonial h3 {
+  font-size: 22px;
+  text-align: left;
 }
 
 .cta {
@@ -150,4 +160,16 @@ select {
   margin-block: 5rem;
   clip-path: polygon(0 0, 100% 31%, 100% 100%, 0% 100%);
   padding-block: 10rem;
+}
+
+.banner-divider {
+  // position: absolute;
+  top: 0;
+  height: 20rem;
+  background-color: var(--clr-green-300);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 68%);
+}
+
+.products-section {
+  margin-top: -15rem;
 }
