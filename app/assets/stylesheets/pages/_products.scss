@@ -26,3 +26,38 @@ form {
   display: flex;
   justify-content: center;
 }
+
+.product-categories {
+  background: var(--clr-green-300);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-inline: auto;
+}
+
+.product-categories i {
+  color: hsla(0, 0%, 0%, 0.8);
+  font-size: 20px;
+  color: white;
+}
+
+.categories-text {
+  font-size: 14px;
+}
+
+.categories {
+  margin-inline: auto;
+  text-align: center;
+  color: hsla(0, 0%, 0%, 0.8);
+}
+.categories li {
+  width: 6rem;
+  margin-right: 0 !important;
+}
+
+.products-count-indicator {
+  font-size: 24px;
+}
