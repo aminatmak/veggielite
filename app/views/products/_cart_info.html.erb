@@ -1,11 +1,12 @@
 
-<div data-controller="cart" data-cart-target="links">
+<div data-controller="cart" data-cart-target="links" data-basket="<%= session[:cart] %>">
   <div class="quantity d-flex justify-content-between">
     <%# if cart.include?(product_id) %>
-      <%= link_to '-', remove_from_cart_product_path(product_id), method: :delete, data: { action: 'click->cart#removeProduct', cart_target: "remove" } %>
+      <%= link_to '-', remove_from_cart_product_path(product_id), method: :delete, data: { action: 'click->cart#removeProduct', cart_target: "remove", index: "product-#{product_id}" } %>
     <%# else %>
-      <div class="p-2">0</div>
-      <%= link_to '+', add_to_cart_product_path(product_id), method: :post, data: { action: 'click->cart#addProduct', cart_target: "add" } %>
+      <div class="p-2" id="product-<%= product_id %>"  >0</div>
+
+      <%= link_to '+', add_to_cart_product_path(product_id), method: :post, data: { action: 'click->cart#addProduct', cart_target: "add", index: "product-#{product_id}" } %>
     <%# end %>
 
   </div>

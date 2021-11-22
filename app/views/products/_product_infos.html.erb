@@ -22,7 +22,7 @@
                   <div class="">
                     <h2 class="card-trip-pricing mx-3"> <%= humanized_money_with_symbol(product.price) %> </h2>
                   </div>
-                  <div id='number'>
+                  <div>
                     <%= render partial: 'cart_info', locals: { product_id: product.id, cart: cart }%>
                   </div>
                 </div>
