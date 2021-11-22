@@ -1,16 +1,17 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1517260739337-6799d239ce83?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2370&q=80);">
-  <h1>VEGGIELITE</h1>
-  <p>A convenient and seamless grocery shopping experience!</p>
+<div class="products-banner" style="background-image: linear-gradient(hsla(132, 29%, 50%, 0.8),hsla(132, 29%, 50%, 0.8)), url(https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+  <div class="home-container">
+    <h1>Products to fall in love with</h1>
+  </div>
 </div>
 
-<div class="container position absolute">
+<div class="home-container position absolute">
   <div class="row">
     <div class="col">
       <div data-controller="search-products">
         <%= form_with url: products_path, method: :get, html: { class:
             'mb-4', data: { search_products_target: 'form' } } do |f| %>
           <%= f.text_field :query,
-                          class: "form-control",
+                          class: "form-control search-bar",
                           placeholder: 'Search',
                           value: params[:query],
                           data: {

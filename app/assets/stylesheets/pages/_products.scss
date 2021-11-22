@@ -1,0 +1,28 @@
+.products-banner {
+  height: 20rem;
+  background-size: cover;
+  background-position: center;
+  padding-block: 5rem;
+
+  clip-path: polygon(0 0, 100% 0, 100% 76%, 0 100%);
+
+  h1 {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: bold;
+    width: 14ch;
+  }
+}
+
+.search-bar {
+  width: 24rem;
+  background-color: white;
+  border-radius: 5px;
+  height: 2.75rem;
+  color: hsla(0, 0%, 0%, 0.2);
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
