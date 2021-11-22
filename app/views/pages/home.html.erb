@@ -4,7 +4,7 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="banner-home home-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1484980859177-5ac1249fda6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1829&q=80);" class="d-block w-100" alt="First slide">
-          <h1 class="banner-header">Easy shopping for all your dietary needs</h1>
+          <h1 class="banner-header">For a wholesome life...</h1>
             <div>
               <%= link_to "SHOP NOW", products_path, class: 'btn-cta' %>
             </div>
@@ -12,7 +12,7 @@
       </div>
   <div class="carousel-item">
         <div class="banner-home home-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1364&q=80);" class="d-block w-100" alt="Second slide">
-          <h1 class="banner-header">Easy shopping for all your dietary needs</h1>
+          <h1 class="banner-header">...shop with Veggielite...</h1>
             <div>
               <%= link_to "SHOP NOW", products_path, class: 'btn-cta' %>
             </div>
@@ -20,7 +20,7 @@
       </div>
       <div class="carousel-item">
         <div class="banner-home home-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1610415946035-bad6fc9f5b8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3687&q=80);" class="d-block w-100" alt="Third slide">
-          <h1 class="banner-header">Easy shopping for all your dietary needs</h1>
+          <h1 class="banner-header">...for all your dietary needs.</h1>
             <div>
               <%= link_to "SHOP NOW", products_path, class: 'btn-cta' %>
             </div>
@@ -34,7 +34,7 @@
 
 <section class="products-section">
   <div class="home-container">
-    <h2 class="product-section-header">Hand-picked for you</h2>
+    <h2 class="product-section-header">Mix and Match</h2>
     <div class="cards">
       
       <% @products[0..2].each do |product| %>
@@ -45,13 +45,15 @@
               <div style="width: 50%;">
                 <%= link_to product.name, product, class: 'product-name' %>
                 
-                <p class="products-calories"> <strong>Calories:</strong> <%= product.calories %> </p>
-                <p> <strong>Protein:</strong> <%= product.macros['protein'] %> </p>
-                <p> <strong>Fat:</strong> <%= product.macros['fat'] %> </p>
-                <p> <strong>Carbs:</strong> <%= product.macros['carbs'] %> </p>
+                <div style="border-left: 0.2rem solid var(--clr-green-300); padding-left: 1rem;">
+                  <p class="products-calories"> <strong>Calories:</strong> <%= product.calories %> </p>
+                  <p> Protein: <%= product.macros['protein'] %> </p>
+                  <p> Fat: <%= product.macros['fat'] %> </p>
+                  <p> Carbs: <%= product.macros['carbs'] %> </p>
+                </div>
               </div>
               <div style="width: 50%; text-align: right;">
-                <h2 class="product-price"> <span style="  border-bottom: 0.2rem solid var(--clr-green-300);"><%= humanized_money_with_symbol(product.price) %> </span> </h2>
+                <h2 class="product-price"><%= humanized_money_with_symbol(product.price) %> </h2>
                   <%# render partial: 'cart_info', locals: { product_id: product.id, cart: @cart }%>
               </div>
             </div>
@@ -59,7 +61,7 @@
         
         </div>
               <% end %>
-    
+
     </div>
 
   </div>
@@ -69,7 +71,14 @@
   <div class=" about-us">
     <div class="home-container">
       <h2 style="font-size: 2.25rem;">About Us</h2>
-      <p class="about-us-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod, augue ut sollicitudin mollis, turpis urna luctus massa, ac dapibus orci dolor at sem. Vestibulum iaculis sollicitudin augue, ut mattis ipsum. Duis vitae sagittis nisi.</p>
+      <p class="about-us-p">The easiest way for us health-conscious
+                            folks to shop your groceries and have them
+                            delivered to your doorstep in about 10 or 30
+                            minutes average time depending on your location.
+                            We offer a convenient and seamless grocery
+                            shopping experience that frees you from the
+                            unavoidable chore of heading to the supermarket
+                            when life gets in the way.</p>
     </div>
   </div>
 </section>
@@ -84,11 +93,11 @@
         </div>
         <div>
           <h3>Amanda P<h3>
-          <%= image_tag "stars.png", class: "stars" %> 
+          <%= image_tag "stars.png", class: "stars" %>
         </div>
       </div>
       <h2 class=".font-nunito">Amazing Service!</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euism </p>
+      <p>Veggielite has been a lifesaver ever since finding out i had to give up meat for medical reasons. Now I thoroughly enjoy my new lifestyle thanks to their health-focused approach. Their customer service is also fast and informative.</p>
     </div>
 
     <div class="testimonial">
@@ -98,11 +107,11 @@
         </div>
         <div>
           <h3>Margaret J.<h3>
-          <%= image_tag "stars.png", class: "stars" %> 
+          <%= image_tag "stars.png", class: "stars" %>
         </div>
       </div>
       <h2 class=".font-nunito">Easy to Use</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euism </p>
+      <p>Veggielite has all the categories you need whenever it comes to a healthy diet. From pescetarian to vegan, their intricate filtering system makes sure you and your tastebuds are satisfied!</p>
     </div>
 
     <div class="testimonial">
@@ -112,18 +121,18 @@
         </div>
         <div>
           <h3>Henry M.<h3>
-          <%= image_tag "stars.png", class: "stars" %> 
+          <%= image_tag "stars.png", class: "stars" %>
         </div>
       </div>
       <h2 class=".font-nunito">Quick Delivery</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euism </p>
+      <p>I live at the edge of Dubai, and usually have to wait hours for my groceries to get delivered to me. However, Veggielite always makes sure I get my order within 45 minutes! Keep it up guys.</p>
     </div>
   </div>
 </section>
 
 <section class="cta text-left">
   <div class="home-container">
-    <h2>Try the best delivery service ever</h2>
+    <h2>Leave it to us</h2>
     <p class="text-gray" style="margin-block: 2.75rem ;">We deliver your produce straight to your doorstep</p>
     <%= link_to "SHOP NOW", products_path, class: 'btn-cta' %>
   </div>
