@@ -10,8 +10,8 @@
       <li><% if current_user && @cart %>
           <%= button_to orders_path, disabled: true do %>
             <div class="btn-checkout" data-bs-toggle="tooltip" data-placement="left" title="Checkout">
-              <i class="fas fa-shopping-cart">
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning" id="counter">
+              <i class="fas fa-shopping-cart" style='font-size:17px;'>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning" style="16px;" id="counter">
                   <%= @cart.size %>
                 </span>
               </i>

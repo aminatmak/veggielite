@@ -1,7 +1,7 @@
 
 
   <div data-search-products-target="list" class="home-container">
-    <p class="products-count-indicator">
+    <p class="products-count-indicator" style="padding:14px; border-radius:4px; background-color:white; font-weight:500; color:#5ba368;">
       <% if params[:query].blank? %>
         <%= pluralize products.count, 'product' %> available
       <% else %>
