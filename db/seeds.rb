@@ -9,7 +9,7 @@ user1 = User.create(
   email: "zuckerberg@gmail.com",
   first_name: 'Suzy',
   last_name: 'Miller',
-  phone_number: '0554534545',
+  phone_number: '+77077924000',
   address: 'Al Barsha 1',
   password: 'ilovemeta'
 )
