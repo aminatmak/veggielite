@@ -8,7 +8,7 @@
     <ul class="nav-buttons">
       <li><%= link_to "Home", root_path, class:"btn-home" %></li>
       <li><% if current_user && @cart %>
-          <%= button_to orders_path do %>
+          <%= button_to orders_path, disabled: true do %>
             <div class="btn-checkout" data-bs-toggle="tooltip" data-placement="left" title="Checkout">
               <i class="fas fa-shopping-cart">
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning" id="counter">

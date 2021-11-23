@@ -1,4 +1,5 @@
 import { Controller } from "stimulus";
+import $ from 'jquery';
 
 let basket;
 
@@ -113,13 +114,11 @@ export default class extends Controller {
   }
 
   disableBusket = () => {
-    this.linksTargets.forEach(link => {
-      const busketButton = link.querySelector('.nav-buttons')
-      if (parseInt(busketButton.innerText) === 0) {
-        link.querySelector('.btn-checkout').prop('disabled', true);
-      } else {
-        link.querySelector('.btn-checkout').prop('disabled', false);
-      }
-    })
+    const busketButton = document.querySelector('.btn-checkout')
+    if (parseInt(busketButton.innerText) === 0) {
+      busketButton.parentElement.disabled = true
+    } else {
+      busketButton.parentElement.disabled = false
+    }
   }
 }
