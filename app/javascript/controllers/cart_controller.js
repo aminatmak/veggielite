@@ -1,4 +1,5 @@
 import { Controller } from "stimulus";
+import $ from 'jquery';
 
 let basket;
 
@@ -26,14 +27,12 @@ export default class extends Controller {
       }
     })
   }
-
-
-
   connect() {
     // 1. iterate through the links
     // 2. access the value in cart-number
     // 3. if == 0 -> disable cart-minus
     this.buttonDisable()
+    this.disableBusket()
   }
 
   async addProduct(event) {
@@ -57,8 +56,8 @@ export default class extends Controller {
     // increase the value by 1
     counter.innerText = parseInt(counter.innerText) + 1
 
-
     this.buttonDisable()
+    this.disableBusket()
 
     const url = this.addTarget.href;
     const response = await fetch(url, {
@@ -69,7 +68,6 @@ export default class extends Controller {
     })
     const parsedResponse = await response.text();
     // console.log(parsedResponse)
-
   }
 
   async removeProduct(event) {
@@ -88,6 +86,7 @@ export default class extends Controller {
     counter.innerText = parseInt(counter.innerText) - 1
 
     this.buttonDisable()
+    this.disableBusket()
 
     const url = this.removeTarget.href;
     const response = await fetch(url, {
@@ -99,7 +98,6 @@ export default class extends Controller {
     const parsedResponse = await response.text();
     // this.linksTarget.outerHTML = parsedResponse;
   }
-
 
   buttonDisable = () => {
     this.linksTargets.forEach(link => {
@@ -113,5 +111,14 @@ export default class extends Controller {
         link.querySelector('.cart-minus').classList.remove('d-none')
       }
     })
+  }
+
+  disableBusket = () => {
+    const busketButton = document.querySelector('.btn-checkout')
+    if (parseInt(busketButton.innerText) === 0) {
+      busketButton.parentElement.disabled = true
+    } else {
+      busketButton.parentElement.disabled = false
+    }
   }
 }

@@ -5,7 +5,7 @@ MoneyRails.configure do |config|
 
   # To set the default currency
   #
-  config.default_currency = :AED
+  config.default_currency = :aed
 
   # Set default bank object
   #
