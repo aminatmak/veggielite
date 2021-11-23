@@ -3,31 +3,31 @@
   <div id="carouselExampleSlidesOnly" class="carousel slide banner-home" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <div class="banner-home home-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1484980859177-5ac1249fda6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1829&q=80);" class="d-block w-100" alt="First slide">
-          <h1 class="banner-header">For a wholesome life...</h1>
+        <div class="banner-home home-container" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1510693306332-74189fa090d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=777&q=80);" class="d-block w-100" alt="First slide">
+          <h1 class="banner-header">The best products, with the best ingredients, for the best deals.</h1>
             <div>
               <%= link_to "SHOP NOW", products_path, class: 'btn-cta' %>
             </div>
         </div>
       </div>
   <div class="carousel-item">
-        <div class="banner-home home-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1364&q=80);" class="d-block w-100" alt="Second slide">
-          <h1 class="banner-header">...shop with Veggielite...</h1>
+        <div class="banner-home home-container" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1555704574-f9ecf4717298?ixlib=rb-1.2.1&ixid=MnwxMjA3[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80);" class="d-block w-100" alt="Second slide">
+          <h1 class="banner-header">We provide nourishment that you can pronounce.</h1>
             <div>
               <%= link_to "SHOP NOW", products_path, class: 'btn-cta' %>
             </div>
         </div>
       </div>
       <div class="carousel-item">
-        <div class="banner-home home-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1610415946035-bad6fc9f5b8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3687&q=80);" class="d-block w-100" alt="Third slide">
-          <h1 class="banner-header">...for all your dietary needs.</h1>
+        <div class="banner-home home-container" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1449339854873-750e6913301b?ixlib=rb-1.2.1&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80);" class="d-block w-100" alt="Third slide">
+          <h1 class="banner-header">Order with Veggielite and start cooking within the hour.</h1>
             <div>
               <%= link_to "SHOP NOW", products_path, class: 'btn-cta' %>
             </div>
         </div>
-      </div> 
+      </div>
 
-      
+
     </div>
   </div>
 </section>
@@ -36,7 +36,7 @@
   <div class="home-container">
     <h2 class="product-section-header">Mix and Match</h2>
     <div class="cards">
-      
+
       <% @products[0..2].each do |product| %>
         <div class="card">
           <div class="card-trip position relative">
@@ -44,7 +44,7 @@
             <div class="card-infos d-flex">
               <div style="width: 50%;">
                 <%= link_to product.name, product, class: 'product-name' %>
-                
+
                 <div style="border-left: 0.2rem solid var(--clr-green-300); padding-left: 1rem;">
                   <p class="products-calories"> <strong>Calories:</strong> <%= product.calories %> </p>
                   <p> Protein: <%= product.macros['protein'] %> </p>
@@ -58,7 +58,7 @@
               </div>
             </div>
           </div>
-        
+
         </div>
               <% end %>
 
@@ -68,17 +68,18 @@
 </section>
 
 <section>
-  <div class=" about-us">
+  <div class="about-us">
     <div class="home-container">
-      <h2 style="font-size: 2.25rem;">About Us</h2>
-      <p class="about-us-p">The easiest way for us health-conscious
-                            folks to shop your groceries and have them
-                            delivered to your doorstep in about 10 or 30
-                            minutes average time depending on your location.
+      <h2 style="font-size: 4.25rem;">About Us</h2>
+      <p class="about-us-p" style="font-size: 1.50rem;">Veggielite is easiest way for us
+                            health-conscious folks to shop for the freshest
+                            and healthiest groceries and have them
+                            delivered to your doorstep within the hour or less, depending
+                            on your location.
                             We offer a convenient and seamless grocery
                             shopping experience that frees you from the
                             unavoidable chore of heading to the supermarket
-                            when life gets in the way.</p>
+                            when life gets in the way. Stay fresh. Stay fruity.</p>
     </div>
   </div>
 </section>
@@ -132,8 +133,8 @@
 
 <section class="cta text-left">
   <div class="home-container">
-    <h2>Leave it to us</h2>
-    <p class="text-gray" style="margin-block: 2.75rem ;">We deliver your produce straight to your doorstep</p>
+    <h2 style="font-size: 4.25rem;">Leave it to us</h2>
+    <p class="text-gray" style="margin-block: 1.70rem">We deliver your produce straight to your doorstep</p>
     <%= link_to "SHOP NOW", products_path, class: 'btn-cta' %>
   </div>
 </section>
