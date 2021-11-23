@@ -35,6 +35,8 @@ gem 'pundit'
 gem 'money-rails'
 gem 'stripe'
 gem 'stripe_event'
+gem 'twilio-ruby', '~> 5.61.1'
+
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
