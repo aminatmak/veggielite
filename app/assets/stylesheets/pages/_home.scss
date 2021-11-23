@@ -113,7 +113,7 @@ select {
 
 .about-us {
   background-color: var(--clr-green-300);
-  height: 60vh;
+  height: 75vh;
   margin-block-start: 4.7rem;
   clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
   color: white;
@@ -124,7 +124,7 @@ select {
 .about-us-p {
   color: #f8f8f8;
   text-align: left;
-  margin: 3.75rem 4rem 8rem;
+  margin: 1.50rem 4rem 8rem;
 }
 
 .avatar {
@@ -155,11 +155,13 @@ select {
 
 .cta {
   background-color: var(--clr-green-300);
-  height: 60vh;
+  height: 70vh;
   color: white;
   margin-block: 5rem;
   clip-path: polygon(0 0, 100% 31%, 100% 100%, 0% 100%);
-  padding-block: 10rem;
+  padding-block: 8rem;
+  text-align: center;
+  font-size: 1.50rem;
 }
 
 .banner-divider {
