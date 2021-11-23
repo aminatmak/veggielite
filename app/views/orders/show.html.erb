@@ -2,15 +2,7 @@
 <div class="banner-checkout" style="background-image: linear-gradient(hsla(132, 29%, 50%, 0.8),hsla(132, 29%, 50%, 0.8)), url(https://images.unsplash.com/photo-1493770348161-369560ae357d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2370&q=80)">
   <div class="card-trip-infos">
     <div class="banner-checkout--content home-container">
-        <h3 class="banner-checkout--header">Your Dashboard</h3>
-
-
-        <%
-=begin%>
- <p>Address: Internet city, Dubai </p>
-        <p>Delivery Date: Oct 4 2021 </p>
-<%
-=end%>
+        <h3 class="banner-checkout--header" style="margin-top:50px;">Checkout</h3>
       <%#= @order.shop.name %>
       <%#= @order.shop.address %>
       <%#= @order.shop.phone_number %>
@@ -19,75 +11,82 @@
   </div>
 </div>
 
-<!-- restaurant info -->
-
-<!-- /restaurant info -->
-
-<!-- restaurant menu / checkout-->
 <div class="container py-3">
-
   <div class="row">
     <div class="col-md-8">
-
     <!-- turn this into an alert (warning) -->
     <div class="alert alert-warning" role="alert">
       Turn on notifications for delivered groceries <strong>.</strong>.
     </div>
 
-
     <div class="home-container">
       <div  class="btn-back"><%= link_to products_path, style: "color:black;" do%>
-            <i class="fas fa-chevron-left"></i>
-          <%end%>
+        <i class="fas fa-chevron-left"></i>
+      <%end%>
       </div>
-      <h2>Your basket</h2>
-      <div>
-        <div>
-            <%
-=begin%>
- <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-<%= @order.id %>" aria-expanded="true" aria-controls="collapse-<%= @order.id %>">
-              <p class=""><strong><%= @order.user.first_name %> <%= @order.user.last_name %> - <%= @order.products.count %> - <%= @order.products.map(&:price).sum %>€</strong></p>
-            </button>
-<%
-=end%>
+
+      <% if @order.state == "completed" %>
+        <div style='display:flex; flex-direction:column; align-items:center; justify-content-center;'>
+          <div style='padding: 14px; width: 80%; background: #c7e1c9;border-radius: 4px; margin-top: -4rem; z-index: 10000; margin-bottom: 1.5rem; display:flex; flex-direction:column; align-items:center;'>
+            <h2>Thank you for choosing Veggielite!</h2>
+            <p class='m-3'>We hope you enjoy your recent <strong> veggielite.fit </strong> purchase 💚</p>
+          </div>
+          <div class="banner-checkout--details" style='padding: 14px; width: 70%; margin-top: -1rem; z-index: 10000; margin-bottom: 1.5rem; display:flex; flex-direction:column; align-items:center;'>
+            <p style='color:black;'> 🛵 Your order <span><%= @order.id %></span> is out for delivery to<span> Internet city, Dubai</span> </p>
+            <p style='color:black;'>on:<span>  <%= @order.created_at.to_date %> </span></p>
+          </div>
+
+          <div id="container" class="position-relative" style='width:50%;'>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
+
+              <path fill-opacity="0" stroke-width="1" stroke="#FF7878" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
+
+              <div class="square position-absolute" style='width:20px; top:-10px; left-11px;  height:20px; background:var(--clr-green-300); border-radius:50px;'>
+              </div>
+            </svg>
+          </div>
+
         </div>
-
-        <div id="collapse-<%= @order.id %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-          <div class="card-body cards">
-            <% @basket.each do |product, quantity| %>
-              <div class="card p-3 mb-3 flex-row">
-                <div class="row w-100">
-                  <div class="col-4">
-                    <div class="avatar">
-                      <% if product.photo.attached? %>
-                        <%= cl_image_tag product.photo.key, class: 'avatar' %>
-                      <% end %>
+      <% else %>
+        <div>
+          <h2 style="margin-left: 12px;">Your busket </h2>
+          <div id="collapse-<%= @order.id %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body cards">
+              <% @basket.each do |product, quantity| %>
+                <div class="card p-3 mb-3 flex-row">
+                  <div class="row w-100">
+                    <div class="col-4">
+                      <div class="avatar">
+                        <% if product.photo.attached? %>
+                          <%= cl_image_tag product.photo.key, class: 'avatar' %>
+                        <% end %>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-8 px-3 grid-3">
-                    <div class="d-flex justify-content-between">
-                      <p style="font-weight: bold; border-bottom: 1px solid var(--clr-green-300);"><%= product.name %></p>
-                    </div>
+                    <div class="col-8 px-3 grid-3">
+                      <div class="d-flex justify-content-between">
+                        <p style="font-weight: bold; border-bottom: 1px solid var(--clr-green-300);"><%= product.name %></p>
+                      </div>
 
-                    <div class="d-flex justify-content-between mt-3">
-                      <p><small>Price</small></p> <p><strong> <%= product.price %></strong></p>
-                    </div>
+                      <div class="d-flex justify-content-between mt-3">
+                        <p><small>Price</small></p> <p><strong> <%= product.price %></strong></p>
+                      </div>
 
-                    <div class="d-flex justify-content-between mt-2 b@order-bottom">
-                      <p><small>Quantity</small></p> <p><strong><%= quantity %></strong></p>
-                    </div>
+                      <div class="d-flex justify-content-between mt-2 b@order-bottom">
+                        <p><small>Quantity</small></p> <p><strong><%= quantity %></strong></p>
+                      </div>
 
-                    <div class="d-flex justify-content-between mt-3">
-                      <p>Total</p>
-                      <p><strong><%= product.price * quantity %></strong></p>
+                      <div class="d-flex justify-content-between mt-3">
+                        <p>Total</p>
+                        <p><strong><%= product.price * quantity %></strong></p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 
@@ -97,82 +96,38 @@
        data-order-id=<%= @order.id %>
        data-key='<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>'>
     <!-- checkout -->
-    <div class="banner-checkout--details">
-          <p><span> Address:</span> Internet city, Dubai </p>
-          <p><span> Delivery Date:</span> Oct 4 2021 </p>
-        </div>
+
     <div class="sticky-top checkout-box">
 
-
-      <div class="d-flex justify-content-between mt-3">
-        <p><strong>Dubai</strong> (1)</p>
-        <p>£4.95</p>
-      </div>
-
-      <div class="d-flex justify-content-between mt-3">
-        <p><strong>Sharjah</strong> (2)</p>
-        <p>£11.90</p>
-      </div>
-
-      <div class="d-flex justify-content-between mt-3 b@order-bottom">
-        <p><strong>Abu Dhabi</strong> (1)</p>
-        <p>£6.95</p>
-      </div>
-
-      <div class="d-flex justify-content-between mt-3 checkout-line">
-        <p><strong>Total</strong></p>
-        <p><strong>£23.80</strong></p>
-      </div>
-      <%# <%= link_to "Chekout", orders_order_id_payment_new_path, class: 'checkout-button' %> %>
-      <% if @order.state == "completed" %>
-        <div class="checkout-button">Thank you for purchasing with us</div>
-      <% else %>
-        <button id="pay" data-action='click->payment#pay' class="checkout-button">Pay Now</button>
+      <p style='font-size:20px;'><strong>Order Summary</strong></p>
+      <p class='checkout-line'></p>
+      <% total = [] %>
+      <% @basket.each do |product, quantity| %>
+        <div class="d-flex justify-content-between mt-3">
+          <p><strong><%= product.name %></strong> (<%= quantity %>) <% total << product.price * quantity %> </p>
+          <p><%= humanized_money_with_symbol((product.price) * quantity) %></p>
+        </div>
       <% end %>
-        <script src="https://js.stripe.com/v3/"></script>
-        <script>
-          // const paymentButton = document.getElementById('pay');
-          // paymentButton.addEventListener('click', () => {
-          //   const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          //   stripe.redirectToCheckout({
-          //     sessionId: '<%= @order.checkout_session_id %>'
-          //   });
 
-          //   fetch("/orders/<%= @order.id %>", {
-          //     method: 'PATCH',
-          //     headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() }
-          //   })
+        <div class="d-flex justify-content-between mt-3 checkout-line">
+          <p><strong>Total Amount</strong></p>
+          <p><strong> <%= humanized_money_with_symbol(total.sum) %> </strong></p>
+        </div>
 
+      <div id="anime" style='width: 20px; height: 20px'></div>
+      <div class="animation">
+        <% if @order.state == "completed" %>
+          <div class="confirmation-button">Thank you for your order!
+            <i class="far fa-check-circle m-2" style="color:var(--clr-green-300);"></i>
+          </div>
+        <% else %>
+          <button id="pay" data-action='click->payment#pay' class="checkout-button">Pay Now</button>
+        <% end %>
+          <script src="https://js.stripe.com/v3/"></script>
 
+      </div>
 
-          });
-        </script>
     </div>
     <!-- /checkout -->
   </div>
-</div>
-
-<!-- <div class="container">
-  <div class="col">
-    <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
-    <ul class="list-unstyled">
-      <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
-      <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount_cents %></li>
-      </li>
-    </ul>
-    <p>Estimated delivery in <strong>15-30 minutes</strong></p>
-  </div>
-  <% @order.products.each do |product| %>
-    <div class="row py-4">
-      <div class="col-md-3"><%= cl_image_tag product.photo.key, width: '100%' %></div>
-      <div class="col">
-        <ul class="list-unstyled">
-          <li><strong>Product</strong> <%= product.name %></li>
-          <li><strong>TOTAL</strong> <%= humanized_money_with_symbol product.price_cents %></li>
-          </li>
-        </ul>
-        <p>Estimated delivery in <strong>15-30 minutes</strong></p>
-      </div>
-    </div>
-  <% end %> -->
 </div>

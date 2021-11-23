@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :my_orders, only: :index
 
+  get 'about', to: 'pages#about'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :products, only: [:index, :show, :new] do

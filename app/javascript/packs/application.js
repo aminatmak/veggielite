@@ -22,16 +22,20 @@ ActiveStorage.start()
 import * as bootstrap from 'bootstrap'
 import "controllers"
 
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from "../plugins/init_autocomplete";
+import { triggerAnimation } from '../plugins/anime';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
   initAutocomplete();
+  triggerAnimation();
+
   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
   popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl)
@@ -41,4 +45,6 @@ document.addEventListener('turbolinks:load', () => {
   tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
   })
+
+
 });
