@@ -276,7 +276,7 @@ product5.save
 p product5
 
 product6 = Product.create(
-  name: 'Fresh Express Salmon Burgers with Herbs',
+  name: 'Salmon Burgers with Herbs',
   description: "Salmon Burgers with Herbs are produced by Fresh Express Foodstuff LLC, an established brand and industry leader in live, fresh and frozen seafood.",
   price: 20,
   categories: ['Dairy free', 'Sugar free', 'Pescetarian'],
@@ -308,10 +308,10 @@ product7.save
 p product7
 
 product8 = Product.create(
-  name: 'Nestle Go Free Honey Flakes',
+  name: 'Honey Flakes',
   description: 'Delicious flakes of golden corn with a touch of honey.',
   price: 21,
-  categories: ['Dairy free', 'Gluten free', 'Pescetarian'],
+  categories: ['Dairy free', 'Gluten free'],
   quantity: 1,
   supplier_country: 'France',
   calories: 230,
@@ -324,7 +324,7 @@ product8.save
 p product8
 
 product9 = Product.create(
-  name: 'Symega Sugar Free Vanilla Powder',
+  name: 'Sugar Free Vanilla Powder',
   description: "Sugar free vanilla powder for all your sweet treats!",
   price_cents: 4800,
   categories: ['Dairy free', 'Sugar free', 'Vegetarian', 'Vegan', 'Pescetarian'],
@@ -340,7 +340,7 @@ product9.save
 p product9
 
 product10 = Product.create(
-  name: "Nature's Path, Love Crunch, Premium Organic Granola, Dark Chocolate & Red Berries",
+  name: "Granola, Chocolate & Berries",
   description: 'Made with Organic Coconut & Cocoa',
   price: 16,
   categories: ['Dairy free', 'Gluten free', 'Vegetarian', 'Organic', 'Pescetarian'],
@@ -359,7 +359,7 @@ product11 = Product.create(
   name: 'Creamy Sheese Original',
   description: 'Our Original Creamy Sheese is a versatile dairy free cream cheese alternative. It can be used in exactly the same way as dairy cream cheese, sweet or savoury, except it’s certified vegan and kosher and made with coconut oil.',
   price: 25,
-  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Pescetarian'],
+  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian'],
   quantity: 1,
   supplier_country: 'Scotland',
   calories: 286,
@@ -372,10 +372,10 @@ product11.save
 p product11
 
 product12 = Product.create(
-  name: "Ina Paarman's Kitchen Fish Spice Seasoning",
+  name: "Fish Spice Seasoning",
   description: 'This is an all-in-one rub with salt added. It is a blend of seasoned flour and breadcrumbs with lemon and herbs. The flour and breadcrumbs promote browning of the fish and prevent moisture loss.',
   price: 17,
-  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Organic', 'Pescetarian'],
+  categories: ['Dairy free', 'Gluten free', 'Vegetarian', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'India',
   calories: 10,
@@ -388,10 +388,10 @@ product12.save
 p product12
 
 product13 = Product.create(
-  name: 'Wilderness Poets Raw Pistachio Butter',
+  name: 'Raw Pistachio Butter',
   description: 'Wilderness Poets Pistachio Butter is a delicious, creamy, naturally glowing green nut butter, made from fresh, Organic, Raw Pistachios.',
   price: 88,
-  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Organic', 'Pescetarian'],
+  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Organic'],
   quantity: 1,
   supplier_country: 'Jordan',
   calories: 156,
@@ -404,7 +404,7 @@ product13.save
 p product13
 
 product14 = Product.create(
-  name: 'Nectar Mini Peanut Butter Cups',
+  name: 'Peanut Butter Cups',
   description: 'Nectar is a unique homegrown concept created in 2013 in the heart of Abu Dhabi that offers functional and nourishing foods and drinks that go beyond basic nutrition. We use the best seasonal, local, and organic ingredients to carefully craft replenishing juices and smoothies, grain- and refined sugar-free snacks and treats, and handcrafted salads with superfood ingredient.',
   price: 30,
   categories: ['Dairy free', 'Gluten free', 'Vegetarian', 'Vegan'],
@@ -420,7 +420,7 @@ product14.save
 p product14
 
 product15 = Product.create(
-  name: 'Bites Of Delight Gluten-Free Vegan Unsweetened Cacao Powder',
+  name: 'Unsweetened Cacao Powder',
   description: 'This product could be safely consumed by celiac disease patients and people with gluten intolerance as it contains less than 20 ppm, a standard established and enforced by the FDA. ',
   price: 28,
   categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan'],
@@ -439,7 +439,7 @@ product16 = Product.create(
   name: 'Almonds',
   description: 'Almonds are a nutritious, portable, low-carbohydrate food that can be used in cooking or eaten raw as is. Almonds can be purchased, salted, unsalted, raw, or roasted. They can be turned into almond butter or ground as almond meal.',
   price_cents: 1874,
-  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Organic'],
+  categories: ['Sugar free', 'Vegetarian', 'Organic'],
   quantity: 1,
   supplier_country: 'USA',
   calories: 47,
@@ -452,10 +452,10 @@ product16.save
 p product16
 
 product17 = Product.create(
-  name: 'Nectar Grain-Free Herb Crackers',
+  name: 'Herb Crackers',
   description: 'Nectar Grain-Free Herb Crackers (45g)',
   price: 20,
-  categories: ['Dairy free', 'Sugar free', 'Vegetarian', 'Vegan', 'Organic'],
+  categories: ['Dairy free', 'Sugar free', 'Vegetarian', 'Vegan'],
   quantity: 1,
   supplier_country: 'UAE',
   calories: 47,
@@ -468,10 +468,10 @@ product17.save
 p product17
 
 product18 = Product.create(
-  name: 'NOW Foods Real Food Organic Monk Fruit 1 to 1 Sugar Replacement',
+  name: 'Organic Monk Fruit',
   description: "Discover and enjoy the enlightened sweetener! Monk fruit is nature's perfect substitute for sugar. You will be pleasantly surprised by how great it tastes, because it is deliciously sweet without any bitter aftertaste like that of artificial sweeteners. At zero calories, monk fruit is perfect for keto and other no-sugar diets.",
   price: 59,
-  categories: ['Dairy free', 'Sugar free', 'Vegetarian', 'Vegan', 'Pescetarian'],
+  categories: ['Dairy free', 'Sugar free', 'Vegetarian', 'Vegan'],
   quantity: 1,
   supplier_country: 'USA',
   calories: 0,
@@ -484,10 +484,10 @@ product18.save
 p product18
 
 product19 = Product.create(
-  name: 'Ceylon Naturals Organic Coconut Cream',
+  name: 'Organic Coconut Cream',
   description: 'Ceylon Naturals Organic Coconut Cream is produced from the finest coconut meat from the best coconut harvests organically grown in Sri Lanka.',
   price_cents: 8950,
-  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Organic', 'Pescetarian'],
+  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Organic'],
   quantity: 1,
   supplier_country: 'Sri Lanka',
   calories: 141,
@@ -500,7 +500,7 @@ product19.save
 p product19
 
 product20 = Product.create(
-  name: 'FullGreen Riced Cauliflower With Tomato, Garlic, & Herbs',
+  name: 'Cauliflower With  Veggies',
   description: "Fullgreen's Rice Cauliflower with Tomato, Garlic, & Herbs is the ideal low-carb side to meals that call for a rich tomato flavor.",
   price: 19,
   categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Pescetarian'],
@@ -516,10 +516,10 @@ product20.save
 p product20
 
 product21 = Product.create(
-  name: 'Skinny Genie Brown Loaf Bread Multigrain',
+  name: 'Brown Bread Multigrain',
   description: "This Gluten Free and Vegan Brown Multigrain Loaf Bread is manufactured in a 100% Gluten Free Environment and Certified by Association of European Coeliac Society, as well as certified by Vegan Australia! Ingredients: Potato Starch, Maize Starch, Rice flour, thickener E415, E412, E464 enymes, linseeds, sunflower seeds, soya protein concentrate, sugar, psyllium, dried sourdough, caramel, ground roasted lentils, yeast extract, maltodextrin, salt, acidity regulaotr E 262, Enyzme, alpha-amylase, sunflower oil, pumpkin seeds, sesame seeds. ",
   price: 24,
-  categories: ['Gluten free', 'Diary free', 'Sugar free'],
+  categories: ['Gluten free', 'Dairy free', 'Sugar free'],
   quantity: 1,
   supplier_country: 'Australia',
   calories: 769,
@@ -532,7 +532,7 @@ product21.save
 p product21
 
 product22 = Product.create(
-  name: 'Organic Atlantic Sea Spaghetti - Dried Sea Vegetable',
+  name: 'Sea Spaghetti',
   description: "Due to the nature of this product, this pack may contain a trace amount of fish, molluscs and/or crustaceans. Guidance from food safety authorities suggests limiting consumption of Hijiki to 5g dry weight per week. Sea vegs are naturally rich in iodine. People sensitive to the effects of iodine are advised to seek medical advice before consuming this product. Product weight: 30g. Ingredients: Dried Hijiki sea vegetable (Hijikia fusiforme). Its colour contrasts beautifully with other vibrant ingredients and works wonderfully well when combined with grains and other vegetables.",
   price: 50,
   categories: ['Pescetarian', 'Vegan'],
@@ -548,7 +548,7 @@ product22.save
 p product22
 
 product23 = Product.create(
-  name: 'CLEARSPRING Organic Instant Miso Soup with Sea Vegetables, 4 x 10g - 4 Single Servings',
+  name: 'Miso Soup with Sea Vegetables,',
   description: "Miso is a flavourful Japanese soya food that makes a rich, satisfying soup. This luxurious tasting organic miso soup is made with two varieties of miso and two kinds of sea vegetables. Ingredients: Freeze-dried brown rice miso* (83%) (whole soya beans*, brown rice*, sea salt), freeze-dried sweet white miso* (11%) (whole soya beans*, rice*, sea salt), dried wakame (3%), dried green onions*, kombu powder (0.3%). *organically grown",
   price: 28,
   categories: ['Organic', 'Pescetarian'],
@@ -564,7 +564,7 @@ product23.save
 p product23
 
 product24 = Product.create(
-  name: 'CLEARSPRING Organic Japanese Tofu Silken & Smooth',
+  name: 'Tofu Silken & Smooth',
   description: "Clearspring's award-winning Tofu is a delicious organic, high-protein and low-fat food that tastes as good as the fresh tofu made in Japan. It is ready to enjoy straight from the pack and is extremely versatile - perfect for use in numerous savoury and sweet dishes.",
   price: 15,
   categories: ['Vegan', 'Vegetarian'],
@@ -580,7 +580,7 @@ product24.save
 p product24
 
 product25 = Product.create!(
-  name: 'ORGANIC LARDER Pesto Vegan With Tofu',
+  name: 'Pesto Vegan With Tofu',
   description: "Our Italian Family Has Been Making Pesto For Generations And This Is Our Organic Tomato Recipe Will Add Pizzazz To Your Italian Meals.
   We Have Been Making Pesto For Over 75 Years And Our Organic Pesto Is Made To Strict Organic Standards And Is Suitable For Vegetarians.",
   price: 44,
@@ -597,8 +597,8 @@ product25.save
 p product25
 
 product26 = Product.create(
-  name: 'ORGRAN No Egg Replacer Mix',
-  description: "Orgran No Egg contains no cholesterol, no lactose and no egg! It can be used in cakes, meringues or to make egg free mayonnaise.",
+  name: 'No Egg Replacer Mix',
+  description: "Orgran No Egg mix contains no cholesterol, no lactose and no egg! It can be used in cakes, meringues or to make egg free mayonnaise.",
   price_cents: 1999,
   categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Sugar free', 'Pescetarian'],
   quantity: 1,
@@ -613,7 +613,7 @@ product26.save
 p product26
 
 product27 = Product.create(
-  name: 'ENLIGHTENED Keto Butter Pecan Pint',
+  name: 'Keto Butter Pecan Pint',
   description: "Cream, Water, Pecans, Egg Yolks, Non-GMO Soluble Corn Fiber, Allulose, Natural Flavor, Erythritol, Milk Protein Concentrate, Vegetable Glycerin, Sunflower Oil, Tara Gum, Guar Gum, Butter, Monk Fruit Concentrate, Salt, Citric Acid",
   price: 45,
   categories: ['Vegetarian', 'Pescetarian'],
@@ -693,7 +693,7 @@ product31.save
 p product31
 
 product32 = Product.create(
-  name: 'BEYOND MEAT Burger Patties',
+  name: 'Burger Patties',
   description: "The Beyond Burger is the world’s first plant-based burger that looks, cooks, and satisfies like beef.",
   price_cents: 3498,
   categories: ['Vegan', 'Vegetarian', 'Gluten free', 'Pescetarian', 'Dairy free'],
@@ -728,7 +728,7 @@ product34 = Product.create(
   name: 'FRESH Green Chili',
   description: "Green chilis are immature chili peppers, most often Pasilla, Anaheim or Poblano peppers that have been harvested before fully ripening.",
   price_cents: 199,
-  categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Gluten free', 'Pescetarian', 'Organic'],
+  categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Gluten free', 'Organic'],
   quantity: 1,
   supplier_country: 'India',
   calories: 30,
@@ -741,7 +741,7 @@ product34.save
 p product34
 
 product35 = Product.create(
-  name: 'VIOLIFE Mozarella Flavour Grated Cheese',
+  name: 'VIOLIFE Grated Cheese',
   description: "These grated cheese shreds are great to have in the fridge! Make a creamy risotto, top your baked potato or pasta, grilled cheese sandwich…the options are endless!",
   price: 23,
   categories: ['Vegan', 'Gluten free', 'Dairy free'],
@@ -755,3 +755,104 @@ file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/
 product35.photo.attach(io: file, filename: 'mozzarella', content_type: 'image/jpg')
 product35.save
 p product35
+
+product36 = Product.create(
+  name: 'Meat Free Fishless Fingers',
+  description: "Enjoy a vegan version of the British classic 'fish & chips'. This product comes in Pack of 10. QUORN Meat Free Fillets are perfect on-the-go meals for vegans who are looking for alternatives for chicken breast. This vegan fillets tastes great when simmered in savory sauce or rubbed with a generous pinch of herbs and spices.",
+  price: 20,
+  categories: ['Vegan', 'Gluten free', 'Dairy free'],
+  quantity: 1,
+  supplier_country: 'France',
+  calories: 290,
+  shop: shop3,
+  macros: { protein: 5, carbs: 21, fat: 24 }
+)
+file = URI.open('https://res.cloudinary.com/happy-tours/image/upload/v1637743514/5019503038620_1_1000x_njncki.jpg')
+product36.photo.attach(io: file, filename: 'fish', content_type: 'image/jpg')
+product36.save
+p product36
+
+
+product37 = Product.create(
+  name: 'Yeast Flakes',
+  description: "New recipe with more vitamin B12 and vitamin D. Vegan food with a cheesy, nutty taste. Made from primary inactive yeast, a rich natural source of B vitamins & trace elements. Sprinkle on soups, stews, casseroles, pasta or salads to enhance the flavour. To preserve vitamins, do not heat to 100C. Suitable for vegetarians, vegans and allergen sufferers (wheat, gluten, dairy, nut free).",
+  price_cents: 3500,
+  categories: ['Vegan', 'Gluten free', 'Dairy free'],
+  quantity: 1,
+  supplier_country: 'France',
+  calories: 124,
+  shop: shop5,
+  macros: { protein: 50, carbs: 16, fat: 4 }
+)
+file = URI.open('https://res.cloudinary.com/happy-tours/image/upload/v1637743514/5019503038620_1_1000x_njncki.jpg')
+product37.photo.attach(io: file, filename: 'yeast', content_type: 'image/jpg')
+product37.save
+p product37
+
+
+product38 = Product.create(
+  name: 'Indian Ginger',
+  description: "Fresh ginger from India. Your throats best friend!",
+  price: 20,
+  categories: ['Vegan', 'Gluten free', 'Dairy free'],
+  quantity: 1,
+  supplier_country: 'India',
+  calories: 80,
+  shop: shop8,
+  macros: { protein: 1.8, carbs: 18, fat: 0.8 }
+)
+file = URI.open('https://res.cloudinary.com/happy-tours/image/upload/v1637749833/ging_500x_wl6x15.jpg')
+product38.photo.attach(io: file, filename: 'vegetable', content_type: 'image/jpg')
+product38.save
+p product38
+
+
+product39 = Product.create(
+  name: 'Avocado',
+  description: "Hass avocado. The Hass avocado is a cultivar of avocado with dark green–colored, bumpy skin. It was first grown and sold by Southern California mail carrier and amateur horticulturist Rudolph Hass, who also gave it his name.",
+  price: 30,
+  categories: ['Vegan', 'Gluten free', 'Dairy free'],
+  quantity: 1,
+  supplier_country: 'Mexico',
+  calories: 124,
+  shop: shop6,
+  macros: { protein: 5, carbs: 21, fat: 4 }
+)
+file = URI.open('https://res.cloudinary.com/happy-tours/image/upload/v1637751285/or100000103_1_aadbe2c2-5544-44ba-8575-f3286b72ce96_1000x_puho7b.jpg')
+product39.photo.attach(io: file, filename: 'avocado', content_type: 'image/jpg')
+product39.save
+p product39
+
+
+product40 = Product.create(
+  name: 'Green chili',
+  description: "These organically grown green chili from Lebanon can add a little spiciness to your dishes. They are individually mild and can get hotter the more you add to your favorite vegan dish. They are perfect for adding heat and color to your curry, salad, or salsa. ",
+  price: 30,
+  categories: ['Vegan', 'Gluten free', 'Dairy free'],
+  quantity: 1,
+  supplier_country: 'Lebanon',
+  calories: 124,
+  shop: shop5,
+  macros: { protein: 5, carbs: 21, fat: 4 }
+)
+file = URI.open('https://res.cloudinary.com/happy-tours/image/upload/v1637751493/Green_Chili_480x480_8b2a0f2a-560e-4572-9f52-020e493ed6c8_400x_p8hxuf.jpg')
+product40.photo.attach(io: file, filename: 'chili', content_type: 'image/jpg')
+product40.save
+p product40
+
+
+product41 = Product.create(
+  name: 'Tofu Tuna',
+  description: "Lord Of Tofu Thuna The Vegan Tuna Substitute Reminds In Taste And Fibrous Consistency Of Red Tuna. The Organic Soya-Based Vegetable Tuna Is The Perfect Fish Alternative On The Pizza, With Pasta Salad, Potato Salad And Green Salads. Even A Traditional Tuna Salad Becomes A Vegan Treat With Tofu Tuna. The Red Tuna Tastes Delicious On Cold Plates Along With Pepperoni Olives, Capers, And Other Mediterranean Fruits And Vegetables. Not To Forget The Popular Sushi, This Also Succeeds Simply And Delicious With The Tuna Alternative. Just Pluck Apart And Continue To Use.",
+  price: 30,
+  categories: ['Vegan', 'Gluten free', 'Dairy free'],
+  quantity: 1,
+  supplier_country: 'Italy',
+  calories: 124,
+  shop: shop12,
+  macros: { protein: 5, carbs: 21, fat: 4 }
+)
+file = URI.open('https://res.cloudinary.com/happy-tours/image/upload/v1637758009/organic_thuna_kein_fish_800x_kjz1ro.jpg')
+product41.photo.attach(io: file, filename: 'tofu', content_type: 'image/jpg')
+product41.save
+p product41
