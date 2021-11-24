@@ -279,7 +279,7 @@ product6 = Product.create(
   name: 'Salmon Burgers with Herbs',
   description: "Salmon Burgers with Herbs are produced by Fresh Express Foodstuff LLC, an established brand and industry leader in live, fresh and frozen seafood.",
   price: 20,
-  categories: ['Dairy free', 'Sugar free', 'Pescetarian'],
+  categories: ['Vegan', 'Pescetarian', 'Vegetarian'],
   quantity: 1,
   supplier_country: 'UAE',
   calories: 300,
@@ -375,7 +375,7 @@ product12 = Product.create(
   name: "Fish Spice Seasoning",
   description: 'This is an all-in-one rub with salt added. It is a blend of seasoned flour and breadcrumbs with lemon and herbs. The flour and breadcrumbs promote browning of the fish and prevent moisture loss.',
   price: 17,
-  categories: ['Dairy free', 'Gluten free', 'Vegetarian', 'Pescetarian'],
+  categories: ['Vegetarian', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'India',
   calories: 10,
@@ -471,7 +471,7 @@ product18 = Product.create(
   name: 'Organic Monk Fruit',
   description: "Discover and enjoy the enlightened sweetener! Monk fruit is nature's perfect substitute for sugar. You will be pleasantly surprised by how great it tastes, because it is deliciously sweet without any bitter aftertaste like that of artificial sweeteners. At zero calories, monk fruit is perfect for keto and other no-sugar diets.",
   price: 59,
-  categories: ['Dairy free', 'Sugar free', 'Vegetarian', 'Vegan'],
+  categories: ['Sugar free', 'Vegetarian', 'Vegan'],
   quantity: 1,
   supplier_country: 'USA',
   calories: 0,
@@ -500,10 +500,10 @@ product19.save
 p product19
 
 product20 = Product.create(
-  name: 'Cauliflower With  Veggies',
+  name: 'Cauliflower With Veggies',
   description: "Fullgreen's Rice Cauliflower with Tomato, Garlic, & Herbs is the ideal low-carb side to meals that call for a rich tomato flavor.",
   price: 19,
-  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Pescetarian'],
+  categories: ['Vegetarian', 'Vegan', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'Jordan',
   calories: 40,
@@ -616,7 +616,7 @@ product27 = Product.create(
   name: 'Keto Butter Pecan Pint',
   description: "Cream, Water, Pecans, Egg Yolks, Non-GMO Soluble Corn Fiber, Allulose, Natural Flavor, Erythritol, Milk Protein Concentrate, Vegetable Glycerin, Sunflower Oil, Tara Gum, Guar Gum, Butter, Monk Fruit Concentrate, Salt, Citric Acid",
   price: 45,
-  categories: ['Vegetarian', 'Pescetarian'],
+  categories: ['Vegetarian'],
   quantity: 1,
   supplier_country: 'USA',
   calories: 230,
@@ -632,7 +632,7 @@ product28 = Product.create(
   name: 'FRESH Eggplant',
   description: "Eggplant, Solanum melongena, is a tropical, herbaceous, perennial plant, closely related to tomato, in the family Solanaceae which is grown for its edible fruit.",
   price_cents: 299,
-  categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Gluten free', 'Pescetarian', 'Organic'],
+  categories: ['Vegan', 'Vegetarian', 'Organic'],
   quantity: 1,
   supplier_country: 'Middle East',
   calories: 25,
@@ -648,7 +648,7 @@ product29 = Product.create(
   name: 'FRESH Ginger',
   description: "Ginger, Zingiber officinale, is an erect, herbaceous perennial plant in the family Zingiberaceae grew for its edible rhizome (underground stem) which is widely used as a spice.",
   price_cents: 199,
-  categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Gluten free', 'Pescetarian', 'Organic'],
+  categories: ['Vegan', 'Vegetarian', 'Organic'],
   quantity: 1,
   supplier_country: 'China',
   calories: 5,
@@ -664,7 +664,7 @@ product30 = Product.create(
   name: 'FRESH Broccoli',
   description: "Broccoli is an edible green plant in the cabbage family (family Brassicaceae, genus Brassica) whose large flowering head and stalk is eaten as a vegetable.",
   price_cents: 799,
-  categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Gluten free', 'Pescetarian', 'Organic'],
+  categories: ['Vegetarian', 'Organic'],
   quantity: 1,
   supplier_country: 'India',
   calories: 24,
@@ -672,7 +672,7 @@ product30 = Product.create(
   macros: { protein: 0, carbs: 4.7, fat: 0 }
 )
 file = URI.open('https://res.cloudinary.com/le-wagon-dubai-fatymah/image/upload/v1637491703/vegl/product/or100000130_600x_dtuhh3.jpg')
-product30.photo.attach(io: file, filename: 'brocolli', content_type: 'image/jpg')
+product30.photo.attach(io: file, filename: 'broccoli', content_type: 'image/jpg')
 product30.save
 p product30
 
@@ -680,7 +680,7 @@ product31 = Product.create(
   name: 'FRESH Lemon',
   description: "Lemon, Citrus lemon, is a small evergreen tree in the family Rutaceae grown for its edible fruit which, among other things, are used in a variety of foods and drinks.",
   price: 3,
-  categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Gluten free', 'Pescetarian', 'Organic'],
+  categories: ['Vegan', 'Vegetarian', 'Organic'],
   quantity: 1,
   supplier_country: 'India',
   calories: 22,
@@ -696,7 +696,7 @@ product32 = Product.create(
   name: 'Burger Patties',
   description: "The Beyond Burger is the world’s first plant-based burger that looks, cooks, and satisfies like beef.",
   price_cents: 3498,
-  categories: ['Vegan', 'Vegetarian', 'Gluten free', 'Pescetarian', 'Dairy free'],
+  categories: ['Vegan', 'Vegetarian', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'Canada',
   calories: 270,
@@ -712,7 +712,7 @@ product33 = Product.create(
   name: 'FRESH Orange Navel',
   description: "The navel orange actually grows a second “twin” fruit opposite its stem. The second fruit remains underdeveloped, but from the outside, it resembles a human navel—hence the name.",
   price_cents: 299,
-  categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Gluten free', 'Pescetarian', 'Organic'],
+  categories: ['Vegan', 'Vegetarian', 'Organic'],
   quantity: 1,
   supplier_country: 'Australia',
   calories: 60,
@@ -728,7 +728,7 @@ product34 = Product.create(
   name: 'FRESH Green Chili',
   description: "Green chilis are immature chili peppers, most often Pasilla, Anaheim or Poblano peppers that have been harvested before fully ripening.",
   price_cents: 199,
-  categories: ['Vegan', 'Vegetarian', 'Dairy free', 'Gluten free', 'Organic'],
+  categories: ['Vegan', 'Vegetarian', 'Organic'],
   quantity: 1,
   supplier_country: 'India',
   calories: 30,
@@ -760,7 +760,7 @@ product36 = Product.create(
   name: 'Meat Free Fishless Fingers',
   description: "Enjoy a vegan version of the British classic 'fish & chips'. This product comes in Pack of 10. QUORN Meat Free Fillets are perfect on-the-go meals for vegans who are looking for alternatives for chicken breast. This vegan fillets tastes great when simmered in savory sauce or rubbed with a generous pinch of herbs and spices.",
   price: 20,
-  categories: ['Vegan', 'Gluten free', 'Dairy free'],
+  categories: ['Vegan', 'Gluten free'],
   quantity: 1,
   supplier_country: 'France',
   calories: 290,
@@ -775,7 +775,7 @@ p product36
 
 product37 = Product.create(
   name: 'Yeast Flakes',
-  description: "New recipe with more vitamin B12 and vitamin D. Vegan food with a cheesy, nutty taste. Made from primary inactive yeast, a rich natural source of B vitamins & trace elements. Sprinkle on soups, stews, casseroles, pasta or salads to enhance the flavour. To preserve vitamins, do not heat to 100C. Suitable for vegetarians, vegans and allergen sufferers (wheat, gluten, dairy, nut free).",
+  description: "New recipe with more vitamin B 12 and vitamin D. Vegan food with a cheesy, nutty taste. Made from primary inactive yeast, a rich natural source of B vitamins & trace elements. Sprinkle on soups, stews, casseroles, pasta or salads to enhance the flavour. To preserve vitamins, do not heat to 100C. Suitable for vegetarians, vegans and allergen sufferers (wheat, gluten, dairy, nut free).",
   price_cents: 3500,
   categories: ['Vegan', 'Gluten free', 'Dairy free'],
   quantity: 1,
@@ -784,7 +784,7 @@ product37 = Product.create(
   shop: shop5,
   macros: { protein: 50, carbs: 16, fat: 4 }
 )
-file = URI.open('https://res.cloudinary.com/happy-tours/image/upload/v1637743514/5019503038620_1_1000x_njncki.jpg')
+file = URI.open('https://res.cloudinary.com/happy-tours/image/upload/v1637778076/marigold_500x_jbemsc.jpg')
 product37.photo.attach(io: file, filename: 'yeast', content_type: 'image/jpg')
 product37.save
 p product37
@@ -794,7 +794,7 @@ product38 = Product.create(
   name: 'Indian Ginger',
   description: "Fresh ginger from India. Your throats best friend!",
   price: 20,
-  categories: ['Vegan', 'Gluten free', 'Dairy free'],
+  categories: ['Vegan', 'Vegetarian'],
   quantity: 1,
   supplier_country: 'India',
   calories: 80,
@@ -811,7 +811,7 @@ product39 = Product.create(
   name: 'Avocado',
   description: "Hass avocado. The Hass avocado is a cultivar of avocado with dark green–colored, bumpy skin. It was first grown and sold by Southern California mail carrier and amateur horticulturist Rudolph Hass, who also gave it his name.",
   price: 30,
-  categories: ['Vegan', 'Gluten free', 'Dairy free'],
+  categories: ['Vegan', 'Vegetarian'],
   quantity: 1,
   supplier_country: 'Mexico',
   calories: 124,
@@ -828,7 +828,7 @@ product40 = Product.create(
   name: 'Green chili',
   description: "These organically grown green chili from Lebanon can add a little spiciness to your dishes. They are individually mild and can get hotter the more you add to your favorite vegan dish. They are perfect for adding heat and color to your curry, salad, or salsa. ",
   price: 30,
-  categories: ['Vegan', 'Gluten free', 'Dairy free'],
+  categories: ['Vegan', 'Vegetarian'],
   quantity: 1,
   supplier_country: 'Lebanon',
   calories: 124,
@@ -845,7 +845,7 @@ product41 = Product.create(
   name: 'Tofu Tuna',
   description: "Lord Of Tofu Thuna The Vegan Tuna Substitute Reminds In Taste And Fibrous Consistency Of Red Tuna. The Organic Soya-Based Vegetable Tuna Is The Perfect Fish Alternative On The Pizza, With Pasta Salad, Potato Salad And Green Salads. Even A Traditional Tuna Salad Becomes A Vegan Treat With Tofu Tuna. The Red Tuna Tastes Delicious On Cold Plates Along With Pepperoni Olives, Capers, And Other Mediterranean Fruits And Vegetables. Not To Forget The Popular Sushi, This Also Succeeds Simply And Delicious With The Tuna Alternative. Just Pluck Apart And Continue To Use.",
   price: 30,
-  categories: ['Vegan', 'Gluten free', 'Dairy free'],
+  categories: ['Vegan', 'Gluten free'],
   quantity: 1,
   supplier_country: 'Italy',
   calories: 124,
@@ -854,5 +854,22 @@ product41 = Product.create(
 )
 file = URI.open('https://res.cloudinary.com/happy-tours/image/upload/v1637758009/organic_thuna_kein_fish_800x_kjz1ro.jpg')
 product41.photo.attach(io: file, filename: 'tofu', content_type: 'image/jpg')
+product41.save
+p product41
+
+
+product41 = Product.create(
+  name: 'Salmontini Organic Smoked Salmon',
+  description: "The flavorful meat and thick filets make it one of the most prized among chefs and home cooks. It holds up well on the grill and when pan-roasted in a nonstick skillet, creating a custardy center with a slightly nutty flavor when medium-rare. Like steak, it’s important to temper King salmon filets on the counter 30 minutes to an hour before cooking and allow it to rest when it comes off the heat.",
+  price: 30,
+  categories: ['Vegan', 'Pescetarian'],
+  quantity: 1,
+  supplier_country: 'Italy',
+  calories: 124,
+  shop: shop12,
+  macros: { protein: 5, carbs: 21, fat: 4 }
+)
+file = URI.open('https://res.cloudinary.com/happy-tours/image/upload/v1637781002/1358943_main_ihwgd6.jpg')
+product41.photo.attach(io: file, filename: 'fish', content_type: 'image/jpg')
 product41.save
 p product41
