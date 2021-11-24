@@ -196,10 +196,10 @@ p "-" * 20
 puts "Creating the products"
 
 product1 = Product.create(
-  name: 'Red Mill Pancake Mix',
+  name: 'Pancake Mix',
   description: 'Heat a lightly greased griddle or pan over medium-high heat. Mix all ingredients together in a bowl until just combined and then pour 1/4-cup portions onto the hot griddle or pan. Cook until bubbly, then flip and let cook until done, about 2-3 minutes per side. Serve immediately. Makes about 8 pancakes.',
   price_cents: 2350,
-  categories: ['Dairy free', 'Gluten free', 'Vegetarian', 'Vegan', 'Pescetarian'],
+  categories: ['Dairy free', 'Gluten free', 'Sugar free'],
   quantity: 1,
   supplier_country: 'USA',
   calories: 230,
@@ -212,10 +212,10 @@ product1.save
 p product1
 
 product2 = Product.create(
-  name: 'The Bridge Natural Bio Rice Drink',
+  name: 'Bio Rice Drink',
   description: 'The Bridge rice milk is a completely vegetable drink, issued from organically grown Italian rice, of pleasant taste and excellent digestibility also for babies.',
   price: 13,
-  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Organic', 'Pescetarian'],
+  categories: ['Dairy free', 'Sugar free', 'Vegan', 'Organic'],
   quantity: 1,
   supplier_country: 'Italy',
   calories: 47,
@@ -228,10 +228,10 @@ product2.save
 p product2
 
 product3 = Product.create(
-  name: 'Sugar Free Green Cubes',
+  name: 'Green Stevia',
   description: "It is 100 percent natural and is made from Stevia leaves. It's the perfect natural sweetener for beverages and desserts that you can share with your family including kids.",
   price: 13,
-  categories: ['Dairy free', 'Sugar free', 'Vegetarian', 'Vegan', 'Pescetarian'],
+  categories: ['Sugar free', 'Vegan'],
   quantity: 1,
   supplier_country: 'India',
   calories: 2,
@@ -244,10 +244,10 @@ product3.save
 p product3
 
 product4 = Product.create(
-  name: 'Sheese Vegan Mozzarella Slices',
+  name: 'Sheese Mozzarella Slices',
   description: "Bute Islands's Mature Cheddar style Sheese is a 100% soya and dairy free cheese alternative made with coconut oil. It's free from lactose, gluten and produced using animal free process.",
   price_cents: 2499,
-  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Pescetarian'],
+  categories: ['Dairy free', 'Vegan', 'Pescetarian'],
   quantity: 1,
   supplier_country: 'Scotland',
   calories: 213,
@@ -263,7 +263,7 @@ product5 = Product.create(
   name: 'Mango',
   description: 'A good ol mango.',
   price_cents: 4500,
-  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Vegetarian', 'Vegan', 'Organic', 'Pescetarian'],
+  categories: ['Vegetarian', 'Vegan', 'Organic'],
   quantity: 1,
   supplier_country: 'Australia',
   calories: 202,
@@ -292,10 +292,10 @@ product6.save
 p product6
 
 product7 = Product.create(
-  name: 'Organic Larder Organic Free Range Eggs',
+  name: 'Organic Eggs',
   description: "The Organic Larder Organic Eggs are loaded with protein and vitamins for your daily requirement. These are free-range and are available in a crate of 10 eggs.",
   price_cents: 2230,
-  categories: ['Dairy free', 'Sugar free', 'Gluten free', 'Organic'],
+  categories: ['Organic'],
   quantity: 1,
   supplier_country: 'Denmark',
   calories: 70,
