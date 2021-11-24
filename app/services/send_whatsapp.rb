@@ -8,10 +8,8 @@ class SendWhatsapp
   end
 
   def call
-    account_sid = 'AC67f4ba7fe89cd9c0581849309594e472'
-    auth_token = '7d366e2d9f60ce709fdeb5fbbc79cc60'
 
-    @client = Twilio::REST::Client.new(account_sid, auth_token)
+    @client = Twilio::REST::Client.new
     message = @client.messages.create(
       body: "Hi #{@user.first_name} 👋🏼, Thank You for ordering via Veggielite!\n
       We’ve received your order ##{@user.orders.last.id}! \n

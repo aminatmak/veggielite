@@ -32,9 +32,12 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+
+    session[:cart] = [] if @order.state == 'completed'
     @basket = @order.products
                     .group_by { |product| product }
                     .transform_values{ |values| values.count }
+    # binding.pry
   end
 
   def update

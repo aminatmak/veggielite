@@ -56,8 +56,7 @@ class ProductsController < ApplicationController
 
   def remove_from_cart
     id = params[:id].to_i
-    session[:cart].delete(id)
-
+    session[:cart].delete_at(session[:cart].index(id))
     respond_to do |format|
       format.text { render partial: 'products/cart_info', locals: { product_id: id, cart: session[:cart] }, formats: [:html] }
     end
