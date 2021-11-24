@@ -49,9 +49,9 @@
         </div>
       <% else %>
         <div>
-          <h2 style="margin-left: 12px;">Your busket </h2>
+          <h2 style="margin-left: 12px;">Your Veggielite Busket </h2>
           <div id="collapse-<%= @order.id %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="card-body cards">
+            <div class="card-body busket-cards">
               <% @basket.each do |product, quantity| %>
                 <div class="card p-3 mb-3 flex-row">
                   <div class="row w-100">

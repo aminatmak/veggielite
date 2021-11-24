@@ -40,7 +40,8 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     @order.update(state: 'completed')
-
     session[:cart] = []
+    sleep(15)
+    SendWhatsapp.new(@order.user).call
   end
 end
