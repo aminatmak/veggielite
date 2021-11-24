@@ -26,7 +26,7 @@
       </div>
 
       <% if @order.state == "completed" %>
-        <div style='display:flex; flex-direction:column; align-items:center; justify-content-center;'>
+        <div style='margin-top:7rem; display:flex; flex-direction:column; align-items:center; justify-content-center;'>
           <div style='padding: 14px; width: 80%; background: #c7e1c9;border-radius: 4px; margin-top: -4rem; z-index: 10000; margin-bottom: 1.5rem; display:flex; flex-direction:column; align-items:center;'>
             <h2>Thank you for choosing Veggielite!</h2>
             <p class='m-3'>We hope you enjoy your recent <strong> veggielite.fit </strong> purchase 💚</p>
@@ -49,17 +49,7 @@
         </div>
       <% else %>
         <div>
-          <h2 style="margin-left: 12px; margin-bottom:12rem;">Your Veggielite Busket </h2>
-            <%# <div style='padding: 43px;width: 95%;background: #c7e1c9;border-radius: 4px;margin-top: -9rem;margin-bottom: 1.5rem;'>
-              <% @basket.each do |product| %>
-                <%# <div>
-                  <p class="products-calories"> <strong>Calories:</strong> <%= product.calories %> </p>
-                  <%# <p> Protein: <%= product.macros['protein'] %> </p>
-                  <%# <p> Fat: <%= product.macros['fat'] %> </p>
-                  <%# <p> Carbs: <%= product.macros['carbs'] %> </p>
-                <%# </div> %>
-              <%# <% end %>
-            <%# </div>  %>
+          <h2 style="margin-left: 12px;">Your Veggielite busket </h2>
           <div id="collapse-<%= @order.id %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body cards">
               <% @basket.each do |product, quantity| %>
@@ -131,10 +121,10 @@
             <i class="far fa-check-circle m-2" style="color:var(--clr-green-300);"></i>
           </div>
         <% else %>
-          <ul style="display-flex justify-content: space-between;height: 4rem; align-items: center;">
-            <li><i class="fab fa-cc-paypal"></i></li>
-            <li> <i class="fab fa-cc-visa"></i></li>
-            <li><i class="fab fa-cc-mastercard"></i></li>
+          <ul class="list-inline" style="margin-bottom: -2rem;display-flex justify-content: space-between;height: 4rem;align-items: center;">
+            <li class="list-inline-item"><i class="fab fa-cc-paypal" style='font-size:36px;'></i></li>
+            <li class="list-inline-item" style="color: var(--clr-green-300);"> <i class="fab fa-cc-visa" style='font-size:36px;'></i></li>
+            <li class="list-inline-item" style="color: var(--clr-yellow);"><i class="fab fa-cc-mastercard" style='font-size:36px;'></i></li>
           </ul>
           <button id="pay" data-action='click->payment#pay' class="checkout-button">Pay Now</button>
         <% end %>

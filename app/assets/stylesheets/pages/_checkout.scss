@@ -84,6 +84,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -12rem;
-  margin-bottom: 2rem;
+  margin-top: -10rem;
+  margin-bottom: 8rem;
+}
+
+.list-inline {
+  width: 100%;
+  display: block;
+  padding-block: 0.5em;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 2rem;
 }
