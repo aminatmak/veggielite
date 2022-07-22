@@ -8,7 +8,7 @@ class Shop < ApplicationRecord
   has_many_attached :photos
 
   validates :name, presence: true, uniqueness: true
-  validates :phone_number, presence: true
-  validates :address, presence: true
-  validates :email, presence: true, uniqueness: true
+  # validates :phone_number, presence: true
+  # validates :address, presence: true
+  # validates :email, presence: true, uniqueness: true
 end

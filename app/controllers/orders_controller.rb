@@ -44,7 +44,6 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.update(state: 'completed')
     session[:cart] = []
-    sleep(15)
-    SendWhatsapp.new(@order.user).call
+    SmsNotificationJob.perform_later(@order.user)
   end
 end

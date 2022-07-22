@@ -6,13 +6,13 @@ class Product < ApplicationRecord
 
   monetize :price_cents
   validates :name, presence: true
-  validates :description, presence: true
-  validates :price, presence: true
-  validates :quantity, presence: true
-  validates :supplier_country, presence: true
+  # validates :description, presence: true
+  # validates :price, presence: true
+  # validates :quantity, presence: true
+  # validates :supplier_country, presence: true
   # validates :categories, inclusion: { in: %w(Gluten free Dairy free Sugar free Vegan Vegetarian Pescetarian Organic) }
-  validates :calories, presence: true
-  validates :shop, presence: true
+  # validates :calories, presence: true
+  # validates :shop, presence: true
 
 # CATEGORIES = ["Gluten free", "Dairy free", "Sugar free",
 #               "Vegan", "Vegetarian", "Pescetarian", "Organic"]
